@@ -1,17 +1,24 @@
+using System;
 using UnityEngine;
 
+[RequireComponent(typeof(MeshRenderer))]
 public class MoveToScreenPoint : MonoBehaviour
 {
-    public float yPos = 0; // adjust as necessary
-    public LayerMask groundLayer; // the layer that represents the ground
+    public float yPos = 0; 
+    public LayerMask groundLayer;
+    private MeshRenderer rnder;
+
+    private void Start()
+    {
+        rnder = gameObject.GetComponent<MeshRenderer>();
+    }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        rnder.enabled = Input.GetMouseButton(0);
+        if (Input.GetMouseButton(0))
         {
-            // create a ray from the camera's viewpoint
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            // check if the ray hits the ground
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, groundLayer))
             {
                 // move the object to the point where the ray hit the ground
