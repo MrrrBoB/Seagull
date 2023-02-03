@@ -15,6 +15,7 @@ public class SceneManaging : MonoBehaviour
 
     public void QuitGame()
     {
+        Debug.Log("Quit Application");
         Application.Quit();
     }
     
