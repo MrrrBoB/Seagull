@@ -13,23 +13,22 @@ public class TextBehavior : MonoBehaviour
         tMesh.text = msg;
     }
 
-    /*public void UpdateText(FloatData dtObj)
+    public void UpdateText(FloatData dtObj)
     {
         tMesh.text = dtObj.GetNum().ToString("");
-    }*/
-
-    public void UpdateTExt(string str)
-    {
-        tMesh.text = str;
     }
 
+    public void UpdateText(int val)
+    {
+        tMesh.text = val.ToString();
+    }
+    public void UpdateText(float val)
+    {
+        tMesh.text = val.ToString();
+    }
     public void UpdateText(Slider sld)
     {
         tMesh.text = (Mathf.Round(sld.value*100)).ToString("");
     }
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
