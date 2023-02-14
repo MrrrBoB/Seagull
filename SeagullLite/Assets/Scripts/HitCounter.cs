@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
+
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class HitCounter : MonoBehaviour
@@ -11,6 +13,10 @@ public class HitCounter : MonoBehaviour
    private TextMeshProUGUI _textObj;
    public int hitCount;
    private Animator _flashAnim;
+   public float disableDelay;
+   [FormerlySerializedAs("_theSeagull")] [SerializeField] private GameObject theSeagull;
+   private Vector3 pos;
+   public Vector3 finishPos;
 
    private void Awake()
    {
@@ -25,9 +31,18 @@ public class HitCounter : MonoBehaviour
       _flashAnim.SetTrigger("Hit");
    }
 
+   public void displayFinish()
+   {
+      _flashAnim.SetBool("CanBeHit", false);
+      _flashAnim.SetTrigger("Finish");
+      _textObj.text = (hitCount + " hits!");
+      gameObject.transform.position = finishPos;
+      StartCoroutine(DelayedDisable());
+   }
    public void ResetToZero()
    {
       hitCount = 0;
+      _flashAnim.SetBool("CanBeHit", true);
    }
 
    private void OnEnable()
@@ -35,11 +50,17 @@ public class HitCounter : MonoBehaviour
       ResetToZero();
    }
 
-   private void Update()
+   public void MoveToAction()
    {
-      if (Input.GetKeyDown(KeyCode.Space))
-      {
-         ChangeHitCount(1);
-      }
+      pos = Camera.main.WorldToScreenPoint(theSeagull.transform.position);
+      pos.y += 100;
+      gameObject.transform.position = pos;
+   }
+
+   private IEnumerator DelayedDisable()
+   {
+      yield return new WaitForSeconds(disableDelay);
+      ResetToZero();
+      gameObject.SetActive(false);
    }
 }

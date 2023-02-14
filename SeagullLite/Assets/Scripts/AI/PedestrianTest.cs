@@ -9,7 +9,7 @@ using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class PedestrianTest : MonoBehaviour, IPointerClickHandler
+public class PedestrianTest : MonoBehaviour//, IPointerClickHandler
 {
     public NavMeshAgent navMeshAgent;
     public float spawnMinY, spawnMaxY, spawnX, targetMinY, targetMaxY,targetX;
@@ -60,8 +60,10 @@ public class PedestrianTest : MonoBehaviour, IPointerClickHandler
     
     private void OnMouseDown()
     {
+        Debug.Log("clicked");
         if (underAttack)
         {
+            gotHitEvent.Invoke();
             currentAttackHits += 1;
             Debug.Log(currentAttackHits);
         }
@@ -93,7 +95,7 @@ public class PedestrianTest : MonoBehaviour, IPointerClickHandler
         StopCoroutine(currentRoutine);
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    /*public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("clicked");
         if (underAttack)
@@ -102,6 +104,6 @@ public class PedestrianTest : MonoBehaviour, IPointerClickHandler
             currentAttackHits += 1;
             Debug.Log(currentAttackHits);
         }
-    }
+    }*/
     
 }
