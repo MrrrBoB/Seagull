@@ -1,6 +1,6 @@
 //Maya ASCII 2022 scene
-//Name: BaseMeshStart.ma
-//Last modified: Fri, Feb 17, 2023 01:21:51 PM
+//Name: BaseMeshRigging.ma
+//Last modified: Fri, Feb 17, 2023 01:22:15 PM
 //Codeset: 1252
 requires maya "2022";
 requires "stereoCamera" "10.0";
@@ -12,7 +12,7 @@ fileInfo "product" "Maya 2022";
 fileInfo "version" "2022";
 fileInfo "cutIdentifier" "202102181415-29bfc1879c";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19044)";
-fileInfo "UUID" "6DBB75B9-49C0-2F6F-EB82-E0A33F6CE599";
+fileInfo "UUID" "FDD5BAFE-49D6-F3B9-E2C2-3E8BD1BDC7AA";
 createNode transform -s -n "persp";
 	rename -uid "22F4D90C-4E99-88B4-FFC3-558097FDE9BB";
 	setAttr ".v" no;
@@ -6043,4 +6043,4 @@ connectAttr "polySoftEdge14.out" "polySoftEdge15.ip";
 connectAttr "Base_MeshShape.wm" "polySoftEdge15.mp";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "Base_MeshShape.iog" ":initialShadingGroup.dsm" -na;
-// End of BaseMeshStart.ma
+// End of BaseMeshRigging.ma
