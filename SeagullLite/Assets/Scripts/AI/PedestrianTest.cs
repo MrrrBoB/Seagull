@@ -67,7 +67,6 @@ public class PedestrianTest : MonoBehaviour//, IPointerClickHandler
             currentAttackHits += 1;
             Debug.Log(currentAttackHits);
         }
-            
     }
 
     private void RunAway()
