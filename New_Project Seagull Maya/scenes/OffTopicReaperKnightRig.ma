@@ -1,6 +1,6 @@
 //Maya ASCII 2022 scene
-//Name: OffTopicReaperKnight.ma
-//Last modified: Mon, Mar 06, 2023 04:09:54 PM
+//Name: OffTopicReaperKnightRig.ma
+//Last modified: Mon, Mar 06, 2023 04:14:28 PM
 //Codeset: 1252
 file -rdi 1 -ns "OffTopicReaperRigFrontier" -rfn "OffTopicReaperRigFrontierRN"
 		 -op "v=0;" -typ "mayaAscii" "F:/SeniorGames/Seagull/Seagull/New_Project Seagull Maya//scenes/OffTopicReaperRigFrontier.ma";
@@ -14,12 +14,12 @@ fileInfo "product" "Maya 2022";
 fileInfo "version" "2022";
 fileInfo "cutIdentifier" "202102181415-29bfc1879c";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19044)";
-fileInfo "UUID" "9F18C998-460D-2AAE-70C7-B9A9E139EEA1";
+fileInfo "UUID" "169CE676-4399-23F6-EBFC-F49AC10ABA23";
 createNode transform -s -n "persp";
 	rename -uid "650F0F97-4D74-27D2-BC68-DDB20EFDF632";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 2.8681375210400493 5.6169292010910032 12.279110663308838 ;
-	setAttr ".r" -type "double3" 345.26164729370169 -340.19999999967524 359.99999999984817 ;
+	setAttr ".t" -type "double3" 9.3115132237101186 10.71922732105504 21.150894209041681 ;
+	setAttr ".r" -type "double3" 341.06164729289424 -333.00000000095571 359.99999999979764 ;
 	setAttr ".rp" -type "double3" 0 1.8649415636748036e-15 0 ;
 	setAttr ".rpt" -type "double3" -1.8596690851224233e-16 -9.345475260673353e-18 1.3656556022669742e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -29,7 +29,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr ".ncp" 0.0032808398950131233;
 	setAttr ".fcp" 328.08398950131232;
 	setAttr ".fd" 0.16404199475065617;
-	setAttr ".coi" 13.145903712514453;
+	setAttr ".coi" 24.582668225369062;
 	setAttr ".ow" 0.32808398950131235;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
@@ -131,7 +131,7 @@ createNode imagePlane -n "imagePlaneShape2" -p "imagePlane2";
 createNode transform -n "ReaperKnightGeo";
 	rename -uid "1612B807-48ED-125B-C535-AF86CA5C3F07";
 createNode fosterParent -n "OffTopicReaperRigFrontierRNfosterParent1";
-	rename -uid "DC847360-432C-2280-CCBC-4C82EC9544BE";
+	rename -uid "8612CCFD-49DB-574F-C660-B4B1845E1820";
 createNode transform -n "Horns" -p "OffTopicReaperRigFrontierRNfosterParent1";
 	rename -uid "D585B449-4DF0-2D5F-28E8-0C92244F2AE2";
 	setAttr -l on ".tx";
@@ -210,25 +210,25 @@ createNode mesh -n "HornsShapeOrig" -p "Horns";
 		 -0.41771686 4.57458162 0.92017454 -0.62858647 4.84599257 0.95499569 -0.64542395 5.015406132 0.97111064
 		 -0.69667995 5.2093792 0.97537601 -0.79398537 5.39335871 1.011572361 -0.54929143 4.84139395 1.10081077
 		 -0.59386384 5.030211926 1.069091916 -0.64765793 5.2200613 1.066714525 -0.71983171 5.39428425 1.13949788
-		 -0.42035922 4.90579081 1.018345118 -0.49968854 5.057258606 1.015448093 -0.5607205 5.24842215 1.016739011
+		 -0.42035919 4.90579081 1.018345118 -0.49968854 5.057258606 1.015448093 -0.5607205 5.24842215 1.016739011
 		 -0.60107219 5.44875765 1.070262671 -0.49584937 4.88429737 0.88465357 -0.55124933 5.042449474 0.91746628
 		 -0.60974222 5.23774052 0.9253999 -0.67522615 5.44783211 0.9423371 -0.81038731 5.70283604 1.14590967
 		 -0.67733687 5.55581474 0.84735227 -0.58954126 5.71244717 0.97200161 -0.88008451 5.62901354 0.88360828
 		 -0.77568907 5.75610685 0.98157561 -0.51957673 5.56663513 0.31130889 -0.446854 5.68533659 0.3209773
 		 -0.63366109 5.63169241 0.26414481 -0.55423677 5.72380304 0.27688339 -0.76712227 5.66062212 0.57661355
 		 -0.66785365 5.77504444 0.60569811 -0.52716702 5.7295289 0.64961576 -0.61694199 5.58373976 0.61892927
-		 -0.83821845 5.65232706 0.73483598 -0.72930157 5.78164625 0.80436099 -0.55361867 5.73405361 0.82142073
+		 -0.83821845 5.65232706 0.73483598 -0.72930157 5.78164625 0.80436105 -0.55361867 5.73405361 0.82142073
 		 -0.64842623 5.57224321 0.73618352 -0.70403087 5.65185213 0.42538336 -0.61436647 5.755476 0.44655651
 		 -0.48979932 5.71337271 0.49055979 -0.57132155 5.5806942 0.4700453 -0.41205496 5.49203444 0.024148986
 		 -0.36150345 5.56526136 0.015634064 -0.47893012 5.53154039 -0.020090865 -0.42546183 5.58807182 -0.022434061
-		 -0.33485538 5.39883137 -0.18257062 -0.55980766 5.60091591 0.11870736 -0.49337435 5.67645979 0.11942624
+		 -0.33485538 5.39883137 -0.18257062 -0.55980766 5.60091591 0.11870736 -0.49337438 5.67645979 0.11942624
 		 -0.40943405 5.64409733 0.1644555 -0.47127011 5.54626417 0.1696616 0.45659775 4.80583763 0.82968992
 		 0.32957596 4.79983664 1.022541404 0.51085156 4.65855455 1.14704263 0.64271003 4.70991468 0.92727607
 		 0.68871731 5.54331684 0.89655721 0.61678946 5.65203285 1.09022522 0.79911137 5.54531145 1.25753319
 		 0.90711212 5.57954597 1.01913929 0.41771686 4.57458162 0.92017454 0.62858635 4.84599304 0.95499563
 		 0.64542401 5.015406132 0.97111058 0.69667971 5.20937967 0.97537595 0.79398555 5.39335871 1.011572361
 		 0.54929137 4.84139442 1.10081077 0.5938639 5.030211926 1.069092035 0.64765799 5.2200613 1.066714525
-		 0.71983176 5.39428425 1.13949788 0.42035922 4.90579081 1.018345118 0.49968848 5.057258606 1.015448093
+		 0.71983176 5.39428425 1.13949788 0.42035919 4.90579081 1.018345118 0.49968848 5.057258606 1.015448093
 		 0.56072044 5.24842262 1.01673913 0.60107225 5.44875765 1.070262671 0.4958494 4.88429737 0.88465357
 		 0.55124915 5.042449951 0.91746628 0.60974246 5.23774052 0.9253999 0.67522621 5.44783211 0.94233716
 		 0.81038719 5.70283604 1.14590967 0.67733681 5.55581474 0.84735215 0.58954132 5.71244717 0.97200161
@@ -237,9 +237,9 @@ createNode mesh -n "HornsShapeOrig" -p "Horns";
 		 0.76712233 5.66062212 0.57661355 0.66785377 5.77504539 0.60569811 0.52716726 5.7295289 0.64961576
 		 0.61694181 5.58374023 0.61892927 0.83821839 5.65232706 0.73483598 0.72930163 5.78164625 0.80436105
 		 0.55361867 5.73405361 0.82142073 0.64842618 5.57224417 0.73618352 0.70403075 5.65185261 0.4253833
-		 0.61436665 5.755476 0.44655645 0.48979938 5.71337271 0.49055985 0.57132173 5.5806942 0.47004539
-		 0.41205502 5.49203444 0.024149049 0.36150357 5.56526136 0.015634 0.47892997 5.53154039 -0.020090926
-		 0.42546201 5.58807182 -0.022434061 0.33485547 5.39883137 -0.1825705 0.5598076 5.60091591 0.11870723
+		 0.61436665 5.755476 0.44655648 0.48979938 5.71337271 0.49055985 0.57132173 5.5806942 0.47004539
+		 0.41205502 5.49203444 0.024149049 0.36150357 5.56526136 0.015634 0.47893 5.53154039 -0.020090926
+		 0.42546201 5.58807182 -0.022434061 0.3348555 5.39883137 -0.1825705 0.5598076 5.60091591 0.11870723
 		 0.49337426 5.67645979 0.11942618 0.40943411 5.64409781 0.16445556 0.47126997 5.54626465 0.16966154;
 	setAttr -s 222 ".ed";
 	setAttr ".ed[0:165]"  0 1 0 1 17 0 17 21 1 0 21 0 1 2 0 2 13 0 13 17 1 2 3 0
@@ -789,7 +789,7 @@ createNode mesh -n "ScytheShape" -p "Scythe";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode parentConstraint -n "Scythe_parentConstraint1" -p "Scythe";
-	rename -uid "2B01880E-4D32-2880-6C9F-F5B1C89A9B79";
+	rename -uid "9B8AE68C-4B46-C9CC-C49F-AB96D1E1481F";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Palm_JointW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -803,14 +803,14 @@ createNode parentConstraint -n "Scythe_parentConstraint1" -p "Scythe";
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".tg[0].tot" -type "double3" 0.21357536004396421 0.15629315603502167 0.20279069105003811 ;
+	setAttr ".tg[0].tot" -type "double3" 0.22690195175300171 0.15629315562700019 0.39526636815459432 ;
 	setAttr ".tg[0].tor" -type "double3" -5.0491546487154855 86.039287473298799 179.99999824576688 ;
 	setAttr ".lr" -type "double3" 1.1927080055488189e-14 0 0 ;
-	setAttr ".rst" -type "double3" 0 -1.1655884772967523e-15 2.9139711932418806e-17 ;
+	setAttr ".rst" -type "double3" -0.19293647743088055 -1.8649415636748036e-15 1.1655884772967523e-16 ;
 	setAttr ".rsrr" -type "double3" 1.1927080055488189e-14 0 0 ;
 	setAttr -k on ".w0";
 createNode scaleConstraint -n "Scythe_scaleConstraint1" -p "Scythe";
-	rename -uid "CA8CD8E1-47A5-7824-9FA2-0CA77598A5B6";
+	rename -uid "5F9086E8-4AFF-3A24-F0B6-63A2C80F473C";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Palm_JointW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -826,22 +826,22 @@ createNode scaleConstraint -n "Scythe_scaleConstraint1" -p "Scythe";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "B5DDA70B-42A0-9825-9962-13B8CA26D3BF";
+	rename -uid "4F95EDB3-4098-5289-3E2F-79ACB7D3F678";
 	setAttr -s 12 ".lnk";
 	setAttr -s 12 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "60ABA233-491C-9DA7-AD09-F489B217F29D";
+	rename -uid "52BFF150-4E95-C8AF-ED71-869CD3B617BC";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "4252CCA9-4F24-7A65-A423-699D1C805C1F";
+	rename -uid "8D053235-4C9E-596B-BD99-759F7A59A65E";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "1435690F-4A41-AEF3-3D82-4BBC829C00D3";
+	rename -uid "01466172-4DA3-7525-8F1D-078E4E044FCE";
 	setAttr ".cdl" 1;
 	setAttr -s 2 ".dli[1]"  1;
 	setAttr -s 2 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "2F8ABDC0-4BB8-0F94-2356-218069CB2F4D";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "0820CCFC-43AB-4E48-EE4B-408C6101E6B1";
+	rename -uid "D9EFC5A3-40C7-E156-590F-26AFD82BCA4D";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "A037231C-4FD6-5090-F66B-93AB9CE77648";
 	setAttr ".g" yes;
@@ -995,7 +995,7 @@ createNode reference -n "OffTopicReaperRigFrontierRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"OffTopicReaperRigFrontierRN"
 		"OffTopicReaperRigFrontierRN" 0
-		"OffTopicReaperRigFrontierRN" 81
+		"OffTopicReaperRigFrontierRN" 91
 		0 "|OffTopicReaperRigFrontierRNfosterParent1|Scythe" "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Reaper_Base" 
 		"-s -r "
 		0 "|OffTopicReaperRigFrontierRNfosterParent1|Horns" "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Reaper_Base" 
@@ -1013,6 +1013,22 @@ createNode reference -n "OffTopicReaperRigFrontierRN";
 		2 "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Ctrl_Grp|OffTopicReaperRigFrontier:CoG_Joint_Ctrl_Grp|OffTopicReaperRigFrontier:CoG_Joint_Ctrl|OffTopicReaperRigFrontier:Bottom_Joint_Ctrl_Grp|OffTopicReaperRigFrontier:Bottom_Joint_Ctrl|OffTopicReaperRigFrontier:Cloak_Mid_Joint_Ctrl_Grp|OffTopicReaperRigFrontier:Cloak_Mid_Joint_Ctrl|OffTopicReaperRigFrontier:Cloak_Bottom_Left_Joint_Ctrl_Grp|OffTopicReaperRigFrontier:Cloak_Bottom_Left_Joint_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Ctrl_Grp|OffTopicReaperRigFrontier:R_Palm_Joint_Ctrl_Grp|OffTopicReaperRigFrontier:R_Palm_Joint_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Ctrl_Grp|OffTopicReaperRigFrontier:R_Palm_Joint_Ctrl_Grp|OffTopicReaperRigFrontier:R_Palm_Joint_Ctrl|OffTopicReaperRigFrontier:R_Thumb_Joint_1_Ctrl_Grp|OffTopicReaperRigFrontier:R_Thumb_Joint_1_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Ctrl_Grp|OffTopicReaperRigFrontier:R_Palm_Joint_Ctrl_Grp|OffTopicReaperRigFrontier:R_Palm_Joint_Ctrl|OffTopicReaperRigFrontier:R_Thumb_Joint_1_Ctrl_Grp|OffTopicReaperRigFrontier:R_Thumb_Joint_1_Ctrl|OffTopicReaperRigFrontier:R_Thumb_Joint_2_Ctrl_Grp|OffTopicReaperRigFrontier:R_Thumb_Joint_2_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Ctrl_Grp|OffTopicReaperRigFrontier:R_Palm_Joint_Ctrl_Grp|OffTopicReaperRigFrontier:R_Palm_Joint_Ctrl|OffTopicReaperRigFrontier:R_Finger_3_Joint_1_Ctrl_Grp|OffTopicReaperRigFrontier:R_Finger_3_Joint_1_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Ctrl_Grp|OffTopicReaperRigFrontier:R_Palm_Joint_Ctrl_Grp|OffTopicReaperRigFrontier:R_Palm_Joint_Ctrl|OffTopicReaperRigFrontier:R_Finger_3_Joint_1_Ctrl_Grp|OffTopicReaperRigFrontier:R_Finger_3_Joint_1_Ctrl|OffTopicReaperRigFrontier:R_Finger_3_Joint_2_Ctrl_Grp|OffTopicReaperRigFrontier:R_Finger_3_Joint_2_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Ctrl_Grp|OffTopicReaperRigFrontier:R_Palm_Joint_Ctrl_Grp|OffTopicReaperRigFrontier:R_Palm_Joint_Ctrl|OffTopicReaperRigFrontier:R_Finger_2_Joint_1_Ctrl_Grp|OffTopicReaperRigFrontier:R_Finger_2_Joint_1_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Ctrl_Grp|OffTopicReaperRigFrontier:R_Palm_Joint_Ctrl_Grp|OffTopicReaperRigFrontier:R_Palm_Joint_Ctrl|OffTopicReaperRigFrontier:R_Finger_2_Joint_1_Ctrl_Grp|OffTopicReaperRigFrontier:R_Finger_2_Joint_1_Ctrl|OffTopicReaperRigFrontier:R_Finger_2_Joint_2_Ctrl_Grp|OffTopicReaperRigFrontier:R_Finger_2_Joint_2_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Ctrl_Grp|OffTopicReaperRigFrontier:R_Palm_Joint_Ctrl_Grp|OffTopicReaperRigFrontier:R_Palm_Joint_Ctrl|OffTopicReaperRigFrontier:R_Finger_1_Joint_1_Ctrl_Grp|OffTopicReaperRigFrontier:R_Finger_1_Joint_1_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Ctrl_Grp|OffTopicReaperRigFrontier:R_Palm_Joint_Ctrl_Grp|OffTopicReaperRigFrontier:R_Palm_Joint_Ctrl|OffTopicReaperRigFrontier:R_Finger_1_Joint_1_Ctrl_Grp|OffTopicReaperRigFrontier:R_Finger_1_Joint_1_Ctrl|OffTopicReaperRigFrontier:R_Finger_1_Joint_2_Ctrl_Grp|OffTopicReaperRigFrontier:R_Finger_1_Joint_2_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Ctrl_Grp|OffTopicReaperRigFrontier:L_Palm_Joint_Ctrl_Grp|OffTopicReaperRigFrontier:L_Palm_Joint_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
@@ -1056,6 +1072,7 @@ createNode reference -n "OffTopicReaperRigFrontierRN";
 		"intermediateObject" " 1"
 		2 "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperRigFrontier:Finger_3_Geo|OffTopicReaperRigFrontier:Finger_3_GeoShapeOrig1" 
 		"intermediateObject" " 1"
+		2 "OffTopicReaperRigFrontier:Image_Layer" "displayType" " 0"
 		2 "OffTopicReaperRigFrontier:bindPose14" "worldMatrix" " -s 16"
 		2 "OffTopicReaperRigFrontier:bindPose14" "worldMatrix[15]" " -type \"matrix\" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
 		
@@ -1080,15 +1097,8 @@ createNode reference -n "OffTopicReaperRigFrontierRN";
 		2 "OffTopicReaperRigFrontier:bindPose14" "g[14:16]" " 0 1 1"
 		2 "OffTopicReaperRigFrontier:Geo_Layer" "displayType" " 2"
 		2 "OffTopicReaperRigFrontier:Geo_Layer" "hideOnPlayback" " 0"
-		2 "OffTopicReaperRigFrontier:Joint_Layer" "displayType" " 0"
-		3 "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperRigFrontier:Cloak_Clasp|OffTopicReaperRigFrontier:Cloak_ClaspShape.instObjGroups" 
-		"OffTopicReaperRigFrontier:OffTopicReaperKnight1:standardSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperRigFrontier:BodySphere|OffTopicReaperRigFrontier:BodySphereShape.instObjGroups" 
-		"OffTopicReaperRigFrontier:OffTopicReaperKnight1:standardSurface2SG.dagSetMembers" 
-		"-na"
-		3 "OffTopicReaperRigFrontier:bindPose14.world" "OffTopicReaperRigFrontier:bindPose14.parents[15]" 
-		""
+		2 "OffTopicReaperRigFrontier:Joint_Layer" "displayType" " 2"
+		2 "OffTopicReaperRigFrontier:Joint_Layer" "visibility" " 0"
 		3 "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperRigFrontier:Finger_2_Geo|OffTopicReaperRigFrontier:Finger_2_GeoShape.instObjGroups" 
 		"OffTopicReaperRigFrontier:standardSurface2SG.dagSetMembers" "-na"
 		3 "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperRigFrontier:Finger_3_Geo|OffTopicReaperRigFrontier:Finger_3_GeoShape.instObjGroups" 
@@ -1101,6 +1111,14 @@ createNode reference -n "OffTopicReaperRigFrontierRN";
 		"OffTopicReaperRigFrontier:standardSurface2SG.dagSetMembers" "-na"
 		3 "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperRigFrontier:Finger_1_Geo|OffTopicReaperRigFrontier:Finger_1_GeoShape.instObjGroups" 
 		"OffTopicReaperRigFrontier:standardSurface2SG.dagSetMembers" "-na"
+		3 "OffTopicReaperRigFrontier:bindPose14.world" "OffTopicReaperRigFrontier:bindPose14.parents[15]" 
+		""
+		3 "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperRigFrontier:Cloak_Clasp|OffTopicReaperRigFrontier:Cloak_ClaspShape.instObjGroups" 
+		"OffTopicReaperRigFrontier:OffTopicReaperKnight1:standardSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperRigFrontier:BodySphere|OffTopicReaperRigFrontier:BodySphereShape.instObjGroups" 
+		"OffTopicReaperRigFrontier:OffTopicReaperKnight1:standardSurface2SG.dagSetMembers" 
+		"-na"
 		5 3 "OffTopicReaperRigFrontierRN" "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Joint_Grp|OffTopicReaperRigFrontier:CoG_Joint|OffTopicReaperRigFrontier:Torso_Joint|OffTopicReaperRigFrontier:Hood_Joint|OffTopicReaperRigFrontier:Head_Joint.worldMatrix" 
 		"OffTopicReaperRigFrontierRN.placeHolderList[1]" ""
 		5 3 "OffTopicReaperRigFrontierRN" "|OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperRigFrontier:Joint_Grp|OffTopicReaperRigFrontier:CoG_Joint|OffTopicReaperRigFrontier:Torso_Joint|OffTopicReaperRigFrontier:Hood_Joint|OffTopicReaperRigFrontier:Head_Joint.lockInfluenceWeights" 
@@ -1282,8 +1300,8 @@ createNode skinCluster -n "skinCluster1";
 		1 0 1
 		1 0 1
 		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 0.99999999999986067 -5.2888490053709851e-07 -2.9418939725851249e-09 -0
-		 5.2888490069532924e-07 0.99999999999986044 9.1564256929786331e-14 -0 2.9418935934649377e-09 -9.3368874647030427e-14 1.0000000000000004 -0
+	setAttr ".pm[0]" -type "matrix" 0.99999999999986067 -5.2888490053709851e-07 -2.9418939725851249e-09 0
+		 5.2888490069532924e-07 0.99999999999986044 9.1564256929786331e-14 0 2.9418935934649377e-09 -9.3368874647030427e-14 1.0000000000000004 0
 		 -6.6093333123025413e-05 -124.94433593748221 -4.1335296630973657 1;
 	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
 	setAttr ".dpf[0]"  4;
@@ -1337,6 +1355,7 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
+	setAttr -s 4 ".sol";
 connectAttr "OffTopicReaperRigFrontierRN.phl[1]" "skinCluster1.ma[0]";
 connectAttr "OffTopicReaperRigFrontierRN.phl[2]" "skinCluster1.lw[0]";
 connectAttr "OffTopicReaperRigFrontierRN.phl[3]" "skinCluster1.ifcl[0]";
@@ -1433,9 +1452,9 @@ connectAttr ":standardSurface1.msg" "materialInfo1.m";
 connectAttr ":standardSurface1.msg" "materialInfo1.t" -na;
 connectAttr "file1.oc" "KnightMat.bc";
 connectAttr "file2.oa" "KnightMat.e";
-connectAttr "KnightMat.oc" "standardSurface2SG.ss";
 connectAttr "ScytheShape.iog" "standardSurface2SG.dsm" -na;
 connectAttr "HornsShape.iog.og[0]" "standardSurface2SG.dsm" -na;
+connectAttr "KnightMat.oc" "standardSurface2SG.ss";
 connectAttr "groupId99.msg" "standardSurface2SG.gn" -na;
 connectAttr "standardSurface2SG.msg" "materialInfo2.sg";
 connectAttr "KnightMat.msg" "materialInfo2.m";
@@ -1529,4 +1548,4 @@ connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file2.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file3.msg" ":defaultTextureList1.tx" -na;
-// End of OffTopicReaperKnight.ma
+// End of OffTopicReaperKnightRig.ma
