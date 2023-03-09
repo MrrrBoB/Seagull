@@ -1,6 +1,6 @@
 //Maya ASCII 2022 scene
-//Name: ReaperKnightAnimMaybeBroken.ma
-//Last modified: Thu, Mar 09, 2023 02:47:34 PM
+//Name: ReaperKnightAnimOneMesh.ma
+//Last modified: Thu, Mar 09, 2023 11:35:10 AM
 //Codeset: 1252
 file -rdi 1 -ns "OffTopicReaperKnightRig" -rfn "OffTopicReaperKnightRigRN" -op
 		 "v=0;" -typ "mayaAscii" "F:/SeniorGames/Seagull/Seagull/New_Project Seagull Maya//scenes/OffTopicReaperKnightRig.ma";
@@ -9,7 +9,6 @@ file -rdi 2 -ns "OffTopicReaperRigFrontier" -rfn "OffTopicReaperKnightRig:OffTop
 file -r -ns "OffTopicReaperKnightRig" -dr 1 -rfn "OffTopicReaperKnightRigRN" -op
 		 "v=0;" -typ "mayaAscii" "F:/SeniorGames/Seagull/Seagull/New_Project Seagull Maya//scenes/OffTopicReaperKnightRig.ma";
 requires maya "2022";
-requires -nodeType "gameFbxExporter" "gameFbxExporter" "1.0";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "4.2.1";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
@@ -17,17 +16,17 @@ fileInfo "product" "Maya 2022";
 fileInfo "version" "2022";
 fileInfo "cutIdentifier" "202102181415-29bfc1879c";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19044)";
-fileInfo "UUID" "E6BFD36E-4223-769D-D432-B0877717D35B";
+fileInfo "UUID" "773CCDE5-4DA2-E872-4EE0-F1AA541EAF97";
 createNode transform -s -n "persp";
 	rename -uid "EF8EAFE0-433E-C983-DA0C-98A015E7A0C0";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 364.99735968606848 326.8880317892216 646.40505252788716 ;
-	setAttr ".r" -type "double3" -17.738352729535166 1108.9999999992506 0 ;
+	setAttr ".t" -type "double3" 132.19479665395684 446.32842872132159 874.34886314774826 ;
+	setAttr ".r" -type "double3" -21.938352729534895 1088.1999999992709 -4.0167597762736084e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "E1D44745-42C3-C8CB-BBB2-FBA92688BF7E";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 777.39465801230585;
+	setAttr ".coi" 953.64398465737816;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -84,26 +83,86 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
+createNode transform -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHood";
+	rename -uid "D2EBFE16-4CBA-56F6-9E06-969525DE282F";
+	setAttr ".rp" -type "double3" -47.531094710635415 106.16849262162523 14.800853525846989 ;
+	setAttr ".sp" -type "double3" -47.531094710635415 106.16849262162523 14.800853525846989 ;
+createNode mesh -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape" 
+		-p "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHood";
+	rename -uid "888C4180-47ED-565B-87DD-10BBFF5A6EA9";
+	setAttr -k off ".v";
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".vcs" 2;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode fosterParent -n "OffTopicReaperKnightRigRNfosterParent1";
+	rename -uid "84494D89-403C-ECBD-C253-8ABDCFAA3AED";
+createNode transform -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform3" 
+		-p "OffTopicReaperKnightRigRNfosterParent1";
+	rename -uid "9BF1D942-479C-FF20-6574-5AB801195D7D";
+	setAttr ".v" no;
+createNode transform -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform4" 
+		-p "OffTopicReaperKnightRigRNfosterParent1";
+	rename -uid "395404E1-4A4B-A3B5-50E5-5C880D618135";
+	setAttr ".v" no;
+createNode transform -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform5" 
+		-p "OffTopicReaperKnightRigRNfosterParent1";
+	rename -uid "9EA48D99-4FCB-C225-9996-51874BB4823B";
+	setAttr ".v" no;
+createNode transform -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform6" 
+		-p "OffTopicReaperKnightRigRNfosterParent1";
+	rename -uid "64117C88-4775-1615-17FC-42A0812630E8";
+	setAttr ".v" no;
+createNode transform -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform7" 
+		-p "OffTopicReaperKnightRigRNfosterParent1";
+	rename -uid "645C58FB-42B3-039F-CA2C-8795C37332A6";
+	setAttr ".v" no;
+createNode transform -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform8" 
+		-p "OffTopicReaperKnightRigRNfosterParent1";
+	rename -uid "B241A424-435A-628F-9934-F7A4050661F5";
+	setAttr ".v" no;
+createNode transform -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform9" 
+		-p "OffTopicReaperKnightRigRNfosterParent1";
+	rename -uid "F93E6A5B-428B-A6DA-8A1B-54AFF349E9A5";
+	setAttr ".v" no;
+createNode transform -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform10" 
+		-p "OffTopicReaperKnightRigRNfosterParent1";
+	rename -uid "E9634A22-45D5-F313-709D-4FA185BA7CE9";
+	setAttr ".v" no;
+createNode transform -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform2" 
+		-p "OffTopicReaperKnightRigRNfosterParent1";
+	rename -uid "0DFED958-407D-7808-1302-1A87BC00F625";
+	setAttr ".v" no;
+createNode transform -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform1" 
+		-p "OffTopicReaperKnightRigRNfosterParent1";
+	rename -uid "4FAE5208-4DCE-6C4E-778D-80B17B5A8B8C";
+	setAttr ".v" no;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "C98BBE9D-426D-B18B-6476-B3BC7C17CBA1";
+	rename -uid "FC4C0025-499D-6EAB-9A6F-DAB36734E1B4";
 	setAttr -s 12 ".lnk";
 	setAttr -s 12 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "98A4D349-4325-D5BA-608C-19B317309A41";
+	rename -uid "85A1A075-4AEC-3FD3-C797-58A02C5EA863";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "25AD47AA-400D-121F-555D-0DA59E805310";
+	rename -uid "75FCF04D-489A-092C-B536-F4B448DF6E07";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "CC242406-40F4-6566-2C8E-5FAA9107C4D1";
+	rename -uid "B27F92B4-4407-D1FE-2221-8E99F5256E51";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "E8E87ACD-4E0D-FDF8-FD3C-0C830AD25D40";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "1504F21D-4324-81C1-1267-54B4E554A512";
+	rename -uid "8595FA66-46B5-1C36-91AC-77B948D8C81D";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "D7AEE60C-4E46-D6FA-5C13-1EAC1D8C0497";
 	setAttr ".g" yes;
 createNode reference -n "OffTopicReaperKnightRigRN";
 	rename -uid "65DE69D3-4D00-599F-ACD6-12BDDC1C1F84";
-	setAttr -s 286 ".phl";
+	setAttr -s 409 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
 	setAttr ".phl[3]" 0;
@@ -390,65 +449,331 @@ createNode reference -n "OffTopicReaperKnightRigRN";
 	setAttr ".phl[284]" 0;
 	setAttr ".phl[285]" 0;
 	setAttr ".phl[286]" 0;
+	setAttr ".phl[287]" 0;
+	setAttr ".phl[288]" 0;
+	setAttr ".phl[289]" 0;
+	setAttr ".phl[290]" 0;
+	setAttr ".phl[291]" 0;
+	setAttr ".phl[292]" 0;
+	setAttr ".phl[293]" 0;
+	setAttr ".phl[294]" 0;
+	setAttr ".phl[295]" 0;
+	setAttr ".phl[296]" 0;
+	setAttr ".phl[297]" 0;
+	setAttr ".phl[298]" 0;
+	setAttr ".phl[299]" 0;
+	setAttr ".phl[300]" 0;
+	setAttr ".phl[301]" 0;
+	setAttr ".phl[302]" 0;
+	setAttr ".phl[303]" 0;
+	setAttr ".phl[304]" 0;
+	setAttr ".phl[305]" 0;
+	setAttr ".phl[306]" 0;
+	setAttr ".phl[307]" 0;
+	setAttr ".phl[308]" 0;
+	setAttr ".phl[309]" 0;
+	setAttr ".phl[310]" 0;
+	setAttr ".phl[311]" 0;
+	setAttr ".phl[312]" 0;
+	setAttr ".phl[313]" 0;
+	setAttr ".phl[314]" 0;
+	setAttr ".phl[315]" 0;
+	setAttr ".phl[316]" 0;
+	setAttr ".phl[317]" 0;
+	setAttr ".phl[318]" 0;
+	setAttr ".phl[319]" 0;
+	setAttr ".phl[320]" 0;
+	setAttr ".phl[321]" 0;
+	setAttr ".phl[322]" 0;
+	setAttr ".phl[323]" 0;
+	setAttr ".phl[324]" 0;
+	setAttr ".phl[325]" 0;
+	setAttr ".phl[326]" 0;
+	setAttr ".phl[327]" 0;
+	setAttr ".phl[328]" 0;
+	setAttr ".phl[329]" 0;
+	setAttr ".phl[330]" 0;
+	setAttr ".phl[331]" 0;
+	setAttr ".phl[332]" 0;
+	setAttr ".phl[333]" 0;
+	setAttr ".phl[334]" 0;
+	setAttr ".phl[335]" 0;
+	setAttr ".phl[336]" 0;
+	setAttr ".phl[337]" 0;
+	setAttr ".phl[338]" 0;
+	setAttr ".phl[339]" 0;
+	setAttr ".phl[340]" 0;
+	setAttr ".phl[341]" 0;
+	setAttr ".phl[342]" 0;
+	setAttr ".phl[343]" 0;
+	setAttr ".phl[344]" 0;
+	setAttr ".phl[345]" 0;
+	setAttr ".phl[346]" 0;
+	setAttr ".phl[347]" 0;
+	setAttr ".phl[348]" 0;
+	setAttr ".phl[349]" 0;
+	setAttr ".phl[350]" 0;
+	setAttr ".phl[351]" 0;
+	setAttr ".phl[352]" 0;
+	setAttr ".phl[353]" 0;
+	setAttr ".phl[354]" 0;
+	setAttr ".phl[355]" 0;
+	setAttr ".phl[356]" 0;
+	setAttr ".phl[357]" 0;
+	setAttr ".phl[358]" 0;
+	setAttr ".phl[359]" 0;
+	setAttr ".phl[360]" 0;
+	setAttr ".phl[361]" 0;
+	setAttr ".phl[362]" 0;
+	setAttr ".phl[363]" 0;
+	setAttr ".phl[364]" 0;
+	setAttr ".phl[365]" 0;
+	setAttr ".phl[366]" 0;
+	setAttr ".phl[367]" 0;
+	setAttr ".phl[368]" 0;
+	setAttr ".phl[369]" 0;
+	setAttr ".phl[370]" 0;
+	setAttr ".phl[371]" 0;
+	setAttr ".phl[372]" 0;
+	setAttr ".phl[373]" 0;
+	setAttr ".phl[374]" 0;
+	setAttr ".phl[375]" 0;
+	setAttr ".phl[376]" 0;
+	setAttr ".phl[377]" 0;
+	setAttr ".phl[378]" 0;
+	setAttr ".phl[379]" 0;
+	setAttr ".phl[380]" 0;
+	setAttr ".phl[381]" 0;
+	setAttr ".phl[382]" 0;
+	setAttr ".phl[383]" 0;
+	setAttr ".phl[384]" 0;
+	setAttr ".phl[385]" 0;
+	setAttr ".phl[386]" 0;
+	setAttr ".phl[387]" 0;
+	setAttr ".phl[388]" 0;
+	setAttr ".phl[389]" 0;
+	setAttr ".phl[390]" 0;
+	setAttr ".phl[391]" 0;
+	setAttr ".phl[392]" 0;
+	setAttr ".phl[393]" 0;
+	setAttr ".phl[394]" 0;
+	setAttr ".phl[395]" 0;
+	setAttr ".phl[396]" 0;
+	setAttr ".phl[397]" 0;
+	setAttr ".phl[398]" 0;
+	setAttr ".phl[399]" 0;
+	setAttr ".phl[400]" 0;
+	setAttr ".phl[401]" 0;
+	setAttr ".phl[402]" 0;
+	setAttr ".phl[403]" 0;
+	setAttr ".phl[404]" 0;
+	setAttr ".phl[405]" 0;
+	setAttr ".phl[406]" 0;
+	setAttr ".phl[407]" 0;
+	setAttr ".phl[408]" 0;
+	setAttr ".phl[409]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"OffTopicReaperKnightRigRN"
-		"OffTopicReaperKnightRig:OffTopicReaperRigFrontierRN" 0
 		"OffTopicReaperKnightRigRN" 0
-		"OffTopicReaperKnightRigRN" 2
-		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontierRNfosterParent1|OffTopicReaperKnightRig:Horns|OffTopicReaperKnightRig:HornsShape" 
-		"visibility" " -k 0 1"
+		"OffTopicReaperKnightRig:OffTopicReaperRigFrontierRN" 0
+		"OffTopicReaperKnightRigRN" 39
+		0 "|OffTopicReaperKnightRig:HornsShape" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform1" 
+		"-s -r "
+		0 "|OffTopicReaperKnightRig:ScytheShape" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform2" 
+		"-s -r "
+		0 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform1" 
+		"|OffTopicReaperKnightRig:OffTopicReaperRigFrontierRNfosterParent1|OffTopicReaperKnightRig:Horns" 
+		"-s -r "
+		0 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform2" 
+		"|OffTopicReaperKnightRig:OffTopicReaperRigFrontierRNfosterParent1|OffTopicReaperKnightRig:Scythe" 
+		"-s -r "
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform1|OffTopicReaperKnightRig:HornsShape" 
+		"intermediateObject" " 1"
 		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontierRNfosterParent1|OffTopicReaperKnightRig:Horns|OffTopicReaperKnightRig:HornsShapeOrig" 
 		"intermediateObject" " 1"
-		"OffTopicReaperKnightRig:OffTopicReaperRigFrontierRN" 314
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform2|OffTopicReaperKnightRig:ScytheShape" 
+		"intermediateObject" " 1"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform2|OffTopicReaperKnightRig:ScytheShape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:79]\""
+		
+		3 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform2|OffTopicReaperKnightRig:ScytheShape.instObjGroups" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "-na"
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform2|OffTopicReaperKnightRig:ScytheShape.instObjGroups.objectGroups[0].objectGroupId" 
+		"OffTopicReaperKnightRigRN.placeHolderList[377]" ""
+		5 0 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.memberWireframeColor" 
+		"|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform2|OffTopicReaperKnightRig:ScytheShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OffTopicReaperKnightRigRN.placeHolderList[378]" "OffTopicReaperKnightRigRN.placeHolderList[379]" 
+		""
+		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform2|OffTopicReaperKnightRig:ScytheShape.outMesh" 
+		"OffTopicReaperKnightRigRN.placeHolderList[380]" ""
+		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform2|OffTopicReaperKnightRig:ScytheShape.worldMatrix" 
+		"OffTopicReaperKnightRigRN.placeHolderList[381]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform2|OffTopicReaperKnightRig:ScytheShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OffTopicReaperKnightRigRN.placeHolderList[382]" ""
+		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform1|OffTopicReaperKnightRig:HornsShape.outMesh" 
+		"OffTopicReaperKnightRigRN.placeHolderList[383]" ""
+		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform1|OffTopicReaperKnightRig:HornsShape.worldMatrix" 
+		"OffTopicReaperKnightRigRN.placeHolderList[384]" ""
+		5 0 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform2|OffTopicReaperKnightRig:ScytheShape.instObjGroups.objectGroups[0]" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "OffTopicReaperKnightRigRN.placeHolderList[385]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[386]" ""
+		5 0 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform2|OffTopicReaperKnightRig:ScytheShape.compInstObjGroups.compObjectGroups[0]" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "OffTopicReaperKnightRigRN.placeHolderList[387]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[388]" ""
+		5 4 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" 
+		"OffTopicReaperKnightRigRN.placeHolderList[389]" ""
+		5 3 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.memberWireframeColor" 
+		"OffTopicReaperKnightRigRN.placeHolderList[390]" ""
+		5 4 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.groupNodes" 
+		"OffTopicReaperKnightRigRN.placeHolderList[391]" ""
+		5 4 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.groupNodes" 
+		"OffTopicReaperKnightRigRN.placeHolderList[392]" ""
+		5 4 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.groupNodes" 
+		"OffTopicReaperKnightRigRN.placeHolderList[393]" ""
+		5 4 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.groupNodes" 
+		"OffTopicReaperKnightRigRN.placeHolderList[394]" ""
+		5 4 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.groupNodes" 
+		"OffTopicReaperKnightRigRN.placeHolderList[395]" ""
+		5 4 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.groupNodes" 
+		"OffTopicReaperKnightRigRN.placeHolderList[396]" ""
+		5 4 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.groupNodes" 
+		"OffTopicReaperKnightRigRN.placeHolderList[397]" ""
+		5 4 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.groupNodes" 
+		"OffTopicReaperKnightRigRN.placeHolderList[398]" ""
+		5 4 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.groupNodes" 
+		"OffTopicReaperKnightRigRN.placeHolderList[399]" ""
+		5 4 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.groupNodes" 
+		"OffTopicReaperKnightRigRN.placeHolderList[400]" ""
+		5 4 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.groupNodes" 
+		"OffTopicReaperKnightRigRN.placeHolderList[401]" ""
+		5 4 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.groupNodes" 
+		"OffTopicReaperKnightRigRN.placeHolderList[402]" ""
+		5 4 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.groupNodes" 
+		"OffTopicReaperKnightRigRN.placeHolderList[403]" ""
+		5 4 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.groupNodes" 
+		"OffTopicReaperKnightRigRN.placeHolderList[404]" ""
+		5 4 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.groupNodes" 
+		"OffTopicReaperKnightRigRN.placeHolderList[405]" ""
+		5 4 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.groupNodes" 
+		"OffTopicReaperKnightRigRN.placeHolderList[406]" ""
+		5 4 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.groupNodes" 
+		"OffTopicReaperKnightRigRN.placeHolderList[407]" ""
+		5 4 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.groupNodes" 
+		"OffTopicReaperKnightRigRN.placeHolderList[408]" ""
+		5 4 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.groupNodes" 
+		"OffTopicReaperKnightRigRN.placeHolderList[409]" ""
+		"OffTopicReaperKnightRig:OffTopicReaperRigFrontierRN" 423
+		0 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform10" 
+		"-s -r "
+		0 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:BodySphereShape" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform9" 
+		"-s -r "
+		0 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Cloak_ClaspShape" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform8" 
+		"-s -r "
+		0 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:PalmsShape" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform7" 
+		"-s -r "
+		0 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ThumbsShape" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform6" 
+		"-s -r "
+		0 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_1_GeoShape" 
+		"|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform5" 
+		"-s -r "
+		0 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_2_GeoShape" 
+		"|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform4" 
+		"-s -r "
+		0 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_3_GeoShape" 
+		"|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform3" 
+		"-s -r "
+		0 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform10" 
+		"|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHood" 
+		"-s -r "
+		0 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform9" 
+		"|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:BodySphere" 
+		"-s -r "
+		0 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform8" 
+		"|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Cloak_Clasp" 
+		"-s -r "
+		0 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform7" 
+		"|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Palms" 
+		"-s -r "
+		0 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform6" 
+		"|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Thumbs" 
+		"-s -r "
+		0 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform5" 
+		"|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_1_Geo" 
+		"-s -r "
+		0 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform4" 
+		"|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_2_Geo" 
+		"-s -r "
+		0 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform3" 
+		"|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_3_Geo" 
+		"-s -r "
 		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Ctrl_Grp" 
 		"visibility" " 1"
 		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Joint_Grp" 
 		"visibility" " 0"
-		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Joint_Grp|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ROOT_Jnt|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CoG_Joint|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Torso_Joint|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Right_Arm_Joint_Base" 
-		"rotate" " -type \"double3\" 62.40135022202179016 16.70872883391735542 26.1089264092984692"
-		
-		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Joint_Grp|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ROOT_Jnt|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CoG_Joint|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Torso_Joint|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Right_Arm_Joint_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Right_Arm_Elbow" 
-		"rotate" " -type \"double3\" 0 -26.75072042030153696 -3.06107397979400098"
-		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Joint_Grp|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ROOT_Jnt|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CoG_Joint|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Torso_Joint|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Left_Arm_Joint_Base" 
-		"rotate" " -type \"double3\" 9.95434805188719452 20.95028679687868944 24.07089200494965908"
-		
-		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Joint_Grp|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ROOT_Jnt|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CoG_Joint|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Torso_Joint|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Left_Arm_Joint_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Left_Arm_Elbow" 
-		"rotate" " -type \"double3\" 0.00012695381744655426 -26.75073713073534165 -3.06156327182637833"
-		
-		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHood|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape" 
-		"visibility" " -k 0 1"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform10|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape" 
+		"intermediateObject" " 1"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform10|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform10|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHood|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Hood_BaseShapeOrig" 
 		"intermediateObject" " 1"
-		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:BodySphere|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:BodySphereShape" 
-		"visibility" " -k 0 1"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform9|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:BodySphereShape" 
+		"intermediateObject" " 1"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform9|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:BodySphereShape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform9|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:BodySphereShape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:BodySphere|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Body_SphereShapeOrig" 
 		"intermediateObject" " 1"
-		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Cloak_Clasp|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Cloak_ClaspShape" 
-		"visibility" " -k 0 1"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform8|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Cloak_ClaspShape" 
+		"intermediateObject" " 1"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform8|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Cloak_ClaspShape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform8|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Cloak_ClaspShape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Cloak_Clasp|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Cloak_ClaspShapeOrig" 
 		"intermediateObject" " 1"
-		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Eye_Plate|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Eye_PlateShape" 
-		"visibility" " -k 0 1"
 		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Eye_Plate|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Left_Eye_PlateShapeOrig1" 
 		"intermediateObject" " 1"
-		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Palms|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:PalmsShape" 
-		"visibility" " -k 0 1"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform7|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:PalmsShape" 
+		"intermediateObject" " 1"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform7|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:PalmsShape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform7|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:PalmsShape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Palms|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:PalmsShapeOrig1" 
 		"intermediateObject" " 1"
-		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Thumbs|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ThumbsShape" 
-		"visibility" " -k 0 1"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform6|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ThumbsShape" 
+		"intermediateObject" " 1"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform6|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ThumbsShape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform6|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ThumbsShape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Thumbs|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ThumbsShapeOrig1" 
 		"intermediateObject" " 1"
-		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_1_Geo|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_1_GeoShape" 
-		"visibility" " -k 0 1"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform5|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_1_GeoShape" 
+		"intermediateObject" " 1"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform5|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_1_GeoShape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform5|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_1_GeoShape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_1_Geo|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_1_GeoShapeOrig1" 
 		"intermediateObject" " 1"
-		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_2_Geo|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_2_GeoShape" 
-		"visibility" " -k 0 1"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform4|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_2_GeoShape" 
+		"intermediateObject" " 1"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform4|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_2_GeoShape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform4|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_2_GeoShape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_2_Geo|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_2_GeoShapeOrig1" 
 		"intermediateObject" " 1"
-		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_3_Geo|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_3_GeoShape" 
-		"visibility" " -k 0 1"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform3|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_3_GeoShape" 
+		"intermediateObject" " 1"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform3|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_3_GeoShape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform3|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_3_GeoShape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_3_Geo|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_3_GeoShapeOrig1" 
 		"intermediateObject" " 1"
 		2 "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Image_Layer" "displayType" 
@@ -459,6 +784,46 @@ createNode reference -n "OffTopicReaperKnightRigRN";
 		" 2"
 		2 "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Joint_Layer" "visibility" 
 		" 1"
+		3 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform9|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:BodySphereShape.instObjGroups" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "-na"
+		3 "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:skinCluster9.outputGeometry[0]" 
+		"|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform9|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:BodySphereShape.inMesh" 
+		""
+		3 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform6|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ThumbsShape.instObjGroups" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "-na"
+		3 "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:skinCluster1.outputGeometry[0]" 
+		"|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform6|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ThumbsShape.inMesh" 
+		""
+		3 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform5|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_1_GeoShape.instObjGroups" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "-na"
+		3 "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:skinCluster2.outputGeometry[0]" 
+		"|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform5|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_1_GeoShape.inMesh" 
+		""
+		3 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform3|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_3_GeoShape.instObjGroups" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "-na"
+		3 "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:skinCluster3.outputGeometry[0]" 
+		"|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform3|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_3_GeoShape.inMesh" 
+		""
+		3 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform4|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_2_GeoShape.instObjGroups" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "-na"
+		3 "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:skinCluster4.outputGeometry[0]" 
+		"|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform4|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_2_GeoShape.inMesh" 
+		""
+		3 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform7|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:PalmsShape.instObjGroups" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "-na"
+		3 "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:skinCluster5.outputGeometry[0]" 
+		"|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform7|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:PalmsShape.inMesh" 
+		""
+		3 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform8|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Cloak_ClaspShape.instObjGroups" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "-na"
+		3 "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:skinCluster10.outputGeometry[0]" 
+		"|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform8|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Cloak_ClaspShape.inMesh" 
+		""
+		3 "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform10|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape.instObjGroups" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "-na"
+		3 "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:skinCluster8.outputGeometry[0]" 
+		"|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform10|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape.inMesh" 
+		""
 		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Ctrl_Grp|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CoG_Joint_Ctrl_Grp|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CoG_Joint_Ctrl.translateX" 
 		"OffTopicReaperKnightRigRN.placeHolderList[1]" ""
 		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Ctrl_Grp|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CoG_Joint_Ctrl_Grp|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CoG_Joint_Ctrl.translateY" 
@@ -1011,26 +1376,198 @@ createNode reference -n "OffTopicReaperKnightRigRN";
 		"OffTopicReaperKnightRigRN.placeHolderList[275]" ""
 		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Ctrl_Grp|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Right_Arm_Wrist_Ctrl_Grp|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Right_Arm_Wrist_Ctrl|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Right_Arm_IK_Handle.scaleZ" 
 		"OffTopicReaperKnightRigRN.placeHolderList[276]" ""
-		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Joint_Grp|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ROOT_Jnt.translateX" 
-		"OffTopicReaperKnightRigRN.placeHolderList[277]" ""
-		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Joint_Grp|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ROOT_Jnt.translateY" 
-		"OffTopicReaperKnightRigRN.placeHolderList[278]" ""
-		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Joint_Grp|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ROOT_Jnt.translateZ" 
-		"OffTopicReaperKnightRigRN.placeHolderList[279]" ""
-		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Joint_Grp|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ROOT_Jnt.rotateX" 
-		"OffTopicReaperKnightRigRN.placeHolderList[280]" ""
-		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Joint_Grp|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ROOT_Jnt.rotateY" 
-		"OffTopicReaperKnightRigRN.placeHolderList[281]" ""
-		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Joint_Grp|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ROOT_Jnt.rotateZ" 
-		"OffTopicReaperKnightRigRN.placeHolderList[282]" ""
 		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Rig|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Reaper_Base.message" 
-		"OffTopicReaperKnightRigRN.placeHolderList[283]" ""
-		5 3 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Left_Arm_Wrist_Ctrl_Grp_scaleConstraint1_CoG_Joint_CtrlW0.message" 
+		"OffTopicReaperKnightRigRN.placeHolderList[277]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform3|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_3_GeoShape.inMesh" 
+		"OffTopicReaperKnightRigRN.placeHolderList[278]" ""
+		5 0 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform3|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_3_GeoShape.instObjGroups.objectGroups[0]" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "OffTopicReaperKnightRigRN.placeHolderList[279]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[280]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform3|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_3_GeoShape.instObjGroups.objectGroups[0].objectGroupId" 
+		"OffTopicReaperKnightRigRN.placeHolderList[281]" ""
+		5 0 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.memberWireframeColor" 
+		"|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform3|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_3_GeoShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OffTopicReaperKnightRigRN.placeHolderList[282]" "OffTopicReaperKnightRigRN.placeHolderList[283]" 
+		""
+		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform3|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_3_GeoShape.outMesh" 
 		"OffTopicReaperKnightRigRN.placeHolderList[284]" ""
-		5 3 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Left_Arm_Wrist_Ctrl_Grp_scaleConstraint1_Torso_Joint_CtrlW1.message" 
+		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform3|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_3_GeoShape.worldMatrix" 
 		"OffTopicReaperKnightRigRN.placeHolderList[285]" ""
+		5 0 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform3|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_3_GeoShape.compInstObjGroups.compObjectGroups[0]" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "OffTopicReaperKnightRigRN.placeHolderList[286]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[287]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform3|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_3_GeoShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OffTopicReaperKnightRigRN.placeHolderList[288]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform4|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_2_GeoShape.inMesh" 
+		"OffTopicReaperKnightRigRN.placeHolderList[289]" ""
+		5 0 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform4|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_2_GeoShape.instObjGroups.objectGroups[0]" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "OffTopicReaperKnightRigRN.placeHolderList[290]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[291]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform4|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_2_GeoShape.instObjGroups.objectGroups[0].objectGroupId" 
+		"OffTopicReaperKnightRigRN.placeHolderList[292]" ""
+		5 0 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.memberWireframeColor" 
+		"|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform4|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_2_GeoShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OffTopicReaperKnightRigRN.placeHolderList[293]" "OffTopicReaperKnightRigRN.placeHolderList[294]" 
+		""
+		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform4|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_2_GeoShape.outMesh" 
+		"OffTopicReaperKnightRigRN.placeHolderList[295]" ""
+		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform4|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_2_GeoShape.worldMatrix" 
+		"OffTopicReaperKnightRigRN.placeHolderList[296]" ""
+		5 0 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform4|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_2_GeoShape.compInstObjGroups.compObjectGroups[0]" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "OffTopicReaperKnightRigRN.placeHolderList[297]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[298]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform4|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_2_GeoShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OffTopicReaperKnightRigRN.placeHolderList[299]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform5|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_1_GeoShape.inMesh" 
+		"OffTopicReaperKnightRigRN.placeHolderList[300]" ""
+		5 0 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform5|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_1_GeoShape.instObjGroups.objectGroups[0]" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "OffTopicReaperKnightRigRN.placeHolderList[301]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[302]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform5|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_1_GeoShape.instObjGroups.objectGroups[0].objectGroupId" 
+		"OffTopicReaperKnightRigRN.placeHolderList[303]" ""
+		5 0 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.memberWireframeColor" 
+		"|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform5|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_1_GeoShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OffTopicReaperKnightRigRN.placeHolderList[304]" "OffTopicReaperKnightRigRN.placeHolderList[305]" 
+		""
+		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform5|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_1_GeoShape.outMesh" 
+		"OffTopicReaperKnightRigRN.placeHolderList[306]" ""
+		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform5|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_1_GeoShape.worldMatrix" 
+		"OffTopicReaperKnightRigRN.placeHolderList[307]" ""
+		5 0 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform5|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_1_GeoShape.compInstObjGroups.compObjectGroups[0]" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "OffTopicReaperKnightRigRN.placeHolderList[308]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[309]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform5|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_1_GeoShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OffTopicReaperKnightRigRN.placeHolderList[310]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform6|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ThumbsShape.inMesh" 
+		"OffTopicReaperKnightRigRN.placeHolderList[311]" ""
+		5 0 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform6|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ThumbsShape.instObjGroups.objectGroups[0]" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "OffTopicReaperKnightRigRN.placeHolderList[312]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[313]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform6|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ThumbsShape.instObjGroups.objectGroups[0].objectGroupId" 
+		"OffTopicReaperKnightRigRN.placeHolderList[314]" ""
+		5 0 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.memberWireframeColor" 
+		"|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform6|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ThumbsShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OffTopicReaperKnightRigRN.placeHolderList[315]" "OffTopicReaperKnightRigRN.placeHolderList[316]" 
+		""
+		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform6|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ThumbsShape.outMesh" 
+		"OffTopicReaperKnightRigRN.placeHolderList[317]" ""
+		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform6|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ThumbsShape.worldMatrix" 
+		"OffTopicReaperKnightRigRN.placeHolderList[318]" ""
+		5 0 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform6|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ThumbsShape.compInstObjGroups.compObjectGroups[0]" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "OffTopicReaperKnightRigRN.placeHolderList[319]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[320]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform6|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ThumbsShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OffTopicReaperKnightRigRN.placeHolderList[321]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform7|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:PalmsShape.inMesh" 
+		"OffTopicReaperKnightRigRN.placeHolderList[322]" ""
+		5 0 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform7|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:PalmsShape.instObjGroups.objectGroups[0]" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "OffTopicReaperKnightRigRN.placeHolderList[323]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[324]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform7|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:PalmsShape.instObjGroups.objectGroups[0].objectGroupId" 
+		"OffTopicReaperKnightRigRN.placeHolderList[325]" ""
+		5 0 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.memberWireframeColor" 
+		"|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform7|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:PalmsShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OffTopicReaperKnightRigRN.placeHolderList[326]" "OffTopicReaperKnightRigRN.placeHolderList[327]" 
+		""
+		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform7|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:PalmsShape.outMesh" 
+		"OffTopicReaperKnightRigRN.placeHolderList[328]" ""
+		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform7|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:PalmsShape.worldMatrix" 
+		"OffTopicReaperKnightRigRN.placeHolderList[329]" ""
+		5 0 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform7|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:PalmsShape.compInstObjGroups.compObjectGroups[0]" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "OffTopicReaperKnightRigRN.placeHolderList[330]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[331]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform7|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:PalmsShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OffTopicReaperKnightRigRN.placeHolderList[332]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform8|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Cloak_ClaspShape.inMesh" 
+		"OffTopicReaperKnightRigRN.placeHolderList[333]" ""
+		5 0 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform8|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Cloak_ClaspShape.instObjGroups.objectGroups[0]" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "OffTopicReaperKnightRigRN.placeHolderList[334]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[335]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform8|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Cloak_ClaspShape.instObjGroups.objectGroups[0].objectGroupId" 
+		"OffTopicReaperKnightRigRN.placeHolderList[336]" ""
+		5 0 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.memberWireframeColor" 
+		"|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform8|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Cloak_ClaspShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OffTopicReaperKnightRigRN.placeHolderList[337]" "OffTopicReaperKnightRigRN.placeHolderList[338]" 
+		""
+		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform8|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Cloak_ClaspShape.outMesh" 
+		"OffTopicReaperKnightRigRN.placeHolderList[339]" ""
+		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform8|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Cloak_ClaspShape.worldMatrix" 
+		"OffTopicReaperKnightRigRN.placeHolderList[340]" ""
+		5 0 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform8|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Cloak_ClaspShape.compInstObjGroups.compObjectGroups[0]" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "OffTopicReaperKnightRigRN.placeHolderList[341]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[342]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform8|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Cloak_ClaspShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OffTopicReaperKnightRigRN.placeHolderList[343]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform9|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:BodySphereShape.inMesh" 
+		"OffTopicReaperKnightRigRN.placeHolderList[344]" ""
+		5 0 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform9|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:BodySphereShape.instObjGroups.objectGroups[0]" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "OffTopicReaperKnightRigRN.placeHolderList[345]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[346]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform9|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:BodySphereShape.instObjGroups.objectGroups[0].objectGroupId" 
+		"OffTopicReaperKnightRigRN.placeHolderList[347]" ""
+		5 0 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.memberWireframeColor" 
+		"|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform9|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:BodySphereShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OffTopicReaperKnightRigRN.placeHolderList[348]" "OffTopicReaperKnightRigRN.placeHolderList[349]" 
+		""
+		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform9|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:BodySphereShape.outMesh" 
+		"OffTopicReaperKnightRigRN.placeHolderList[350]" ""
+		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform9|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:BodySphereShape.worldMatrix" 
+		"OffTopicReaperKnightRigRN.placeHolderList[351]" ""
+		5 0 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform9|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:BodySphereShape.compInstObjGroups.compObjectGroups[0]" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "OffTopicReaperKnightRigRN.placeHolderList[352]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[353]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform9|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:BodySphereShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OffTopicReaperKnightRigRN.placeHolderList[354]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform10|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape.inMesh" 
+		"OffTopicReaperKnightRigRN.placeHolderList[355]" ""
+		5 0 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform10|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape.instObjGroups.objectGroups[0]" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "OffTopicReaperKnightRigRN.placeHolderList[356]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[357]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform10|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape.instObjGroups.objectGroups[0].objectGroupId" 
+		"OffTopicReaperKnightRigRN.placeHolderList[358]" ""
+		5 0 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:standardSurface2SG.memberWireframeColor" 
+		"|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform10|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OffTopicReaperKnightRigRN.placeHolderList[359]" "OffTopicReaperKnightRigRN.placeHolderList[360]" 
+		""
+		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform10|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape.outMesh" 
+		"OffTopicReaperKnightRigRN.placeHolderList[361]" ""
+		5 3 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform10|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape.worldMatrix" 
+		"OffTopicReaperKnightRigRN.placeHolderList[362]" ""
+		5 0 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform10|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape.compInstObjGroups.compObjectGroups[0]" 
+		"OffTopicReaperKnightRig:standardSurface2SG.dagSetMembers" "OffTopicReaperKnightRigRN.placeHolderList[363]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[364]" ""
+		5 4 "OffTopicReaperKnightRigRN" "|OffTopicReaperKnightRigRNfosterParent1|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:transform10|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OffTopicReaperKnightRigRN.placeHolderList[365]" ""
+		5 3 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:skinCluster1.outputGeometry[0]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[366]" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:ThumbsShape.i"
+		
+		5 3 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:skinCluster2.outputGeometry[0]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[367]" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_1_GeoShape.i"
+		
+		5 3 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:skinCluster3.outputGeometry[0]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[368]" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_3_GeoShape.i"
+		
+		5 3 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:skinCluster4.outputGeometry[0]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[369]" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Finger_2_GeoShape.i"
+		
+		5 3 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:skinCluster5.outputGeometry[0]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[370]" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:PalmsShape.i"
+		
+		5 3 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:skinCluster8.outputGeometry[0]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[371]" "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape.i"
+		
+		5 3 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:skinCluster9.outputGeometry[0]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[372]" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:BodySphereShape.i"
+		
+		5 3 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:skinCluster10.outputGeometry[0]" 
+		"OffTopicReaperKnightRigRN.placeHolderList[373]" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Cloak_ClaspShape.i"
+		
+		5 3 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Left_Arm_Wrist_Ctrl_Grp_scaleConstraint1_CoG_Joint_CtrlW0.message" 
+		"OffTopicReaperKnightRigRN.placeHolderList[374]" ""
+		5 3 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Left_Arm_Wrist_Ctrl_Grp_scaleConstraint1_Torso_Joint_CtrlW1.message" 
+		"OffTopicReaperKnightRigRN.placeHolderList[375]" ""
 		5 3 "OffTopicReaperKnightRigRN" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:Left_Arm_Wrist_Ctrl_Grp_scaleConstraint1_Reaper_BaseW2.message" 
-		"OffTopicReaperKnightRigRN.placeHolderList[286]" "";
+		"OffTopicReaperKnightRigRN.placeHolderList[376]" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode aiOptions -s -n "defaultArnoldRenderOptions";
@@ -1064,7 +1601,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
 		+ "            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n"
 		+ "            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n"
-		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 2349\n            -height 631\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 2349\n            -height 858\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n"
 		+ "            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n"
 		+ "            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n"
@@ -1076,9 +1613,9 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n"
 		+ "                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n"
 		+ "\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayValues 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
-		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -frameRange 4.53913e-06 121.999995 \n                -initialized 1\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n"
-		+ "                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n"
-		+ "                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n"
+		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n"
+		+ "                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n"
 		+ "                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n"
 		+ "                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n"
@@ -1087,13 +1624,13 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap true\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 2349\\n    -height 631\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 2349\\n    -height 631\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 2349\\n    -height 858\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 2349\\n    -height 858\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "69919189-48DC-827F-E1F0-F9AD7F4D48E3";
-	setAttr ".b" -type "string" "playbackOptions -min -1 -max 228 -ast -1 -aet 250 ";
+	setAttr ".b" -type "string" "playbackOptions -min 0 -max 228 -ast 0 -aet 250 ";
 	setAttr ".st" 6;
 createNode animCurveTA -n "R_Finger_1_Joint_1_Ctrl_rotateX";
 	rename -uid "6D4FE937-4502-F2DE-85EC-C2984F6D9612";
@@ -4437,65 +4974,106 @@ createNode animCurveTL -n "Cloak_Mid_Joint_Ctrl_translateX";
 	setAttr -s 31 ".kiy[27:30]"  0 0 0 0;
 	setAttr -s 31 ".kox[27:30]"  1 1 1 1;
 	setAttr -s 31 ".koy[27:30]"  0 0 0 0;
-createNode animCurveTL -n "ROOT_Jnt_translateX";
-	rename -uid "DD42DC5D-4F3A-32F8-98A6-E1986C104DCD";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  0 0 228 0;
-createNode animCurveTL -n "ROOT_Jnt_translateY";
-	rename -uid "FEB48139-4B10-D54B-791F-00BB10AB70F2";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  0 0 228 0;
-createNode animCurveTL -n "ROOT_Jnt_translateZ";
-	rename -uid "4D58E2A6-404F-BEED-2840-98810436F1DD";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  0 0 228 0;
-createNode animCurveTA -n "ROOT_Jnt_rotateX";
-	rename -uid "AB5C6CD7-4B88-BD00-B09F-09880A6B3939";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  0 0 228 0;
-createNode animCurveTA -n "ROOT_Jnt_rotateY";
-	rename -uid "DA1E0F68-48B1-6751-26FC-79B45327890A";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  0 0 228 0;
-createNode animCurveTA -n "ROOT_Jnt_rotateZ";
-	rename -uid "CE6A2A98-42CC-7143-2337-30B21DE76AC0";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  0 0 228 0;
-createNode gameFbxExporter -n "gameExporterPreset1";
-	rename -uid "0335F42E-4E9C-9F52-5DE7-0D82E70A8E63";
-	setAttr ".pn" -type "string" "Model Default";
-	setAttr ".ils" yes;
-	setAttr ".ilu" yes;
-	setAttr ".ebm" yes;
-	setAttr ".inc" yes;
-	setAttr ".fv" -type "string" "FBX201800";
-	setAttr ".exp" -type "string" "F:/SeniorGames/RogueI/Rogue-Inheritance-Senior-Game-2023/Assets/AI/Reaper Family/Assets";
-	setAttr ".exf" -type "string" "Reaper Knight Rig";
-createNode gameFbxExporter -n "gameExporterPreset2";
-	rename -uid "A3F83496-48E2-CE88-8C21-3EA634C8D216";
-	setAttr ".pn" -type "string" "Anim Default";
-	setAttr ".ils" yes;
-	setAttr ".eti" 2;
-	setAttr ".spt" 2;
-	setAttr ".ic" no;
-	setAttr ".ebm" yes;
-	setAttr ".fv" -type "string" "FBX201800";
-createNode gameFbxExporter -n "gameExporterPreset3";
-	rename -uid "B08F8D1D-43CB-368F-4ACC-37B52567EBE0";
-	setAttr ".pn" -type "string" "TE Anim Default";
-	setAttr ".ils" yes;
-	setAttr ".eti" 3;
-	setAttr ".ebm" yes;
-	setAttr ".fv" -type "string" "FBX201800";
+createNode polyUnite -n "polyUnite1";
+	rename -uid "284B1622-4259-44D1-6577-9B9881DD9B61";
+	setAttr -s 10 ".ip";
+	setAttr -s 10 ".im";
+createNode groupId -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId27";
+	rename -uid "C1F7066C-4143-C140-6D3A-49BF1053A483";
+	setAttr ".ihi" 0;
+createNode groupParts -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts7";
+	rename -uid "75BDF4F0-414D-B19A-2AF6-47BEBF91B6A6";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:577]";
+createNode groupId -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId28";
+	rename -uid "4D07F195-4BE2-2E43-1603-9F849BE7FD12";
+	setAttr ".ihi" 0;
+createNode groupId -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId29";
+	rename -uid "A359E522-49F2-C123-43C1-2BAD6BC4BE48";
+	setAttr ".ihi" 0;
+createNode groupParts -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts8";
+	rename -uid "45FEFE88-4990-9F6F-EE94-6E9493694B95";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:63]";
+createNode groupId -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId30";
+	rename -uid "2CD146D3-4548-9557-10CA-F09F07AB309D";
+	setAttr ".ihi" 0;
+createNode groupId -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId31";
+	rename -uid "3ABFAC11-4E17-96CA-D743-8DB4F3E0A904";
+	setAttr ".ihi" 0;
+createNode groupParts -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts9";
+	rename -uid "6CC1E6BF-45F6-B30F-BE3B-C78F4D1D5484";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:31]";
+createNode groupId -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId32";
+	rename -uid "BAD70D26-4571-8B10-4611-A2B97219D4D8";
+	setAttr ".ihi" 0;
+createNode groupId -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId33";
+	rename -uid "376CEE6E-459E-67B5-534C-20B9E5BB7E40";
+	setAttr ".ihi" 0;
+createNode groupParts -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts10";
+	rename -uid "1DB953C6-4E6C-FE8A-141C-22A2B9B914E8";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:83]";
+createNode groupId -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId34";
+	rename -uid "B9E4C1D7-471F-5CB6-CE8F-CBB7BAB6BEC0";
+	setAttr ".ihi" 0;
+createNode groupId -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId35";
+	rename -uid "2EF6D103-4C2F-5B7C-1034-5C85E48C5889";
+	setAttr ".ihi" 0;
+createNode groupParts -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts11";
+	rename -uid "BA1CAD20-4090-8938-A727-9898150C8BE3";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:79]";
+createNode groupId -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId36";
+	rename -uid "C042A4A7-49D6-A53B-9698-CD876C064FAA";
+	setAttr ".ihi" 0;
+createNode groupId -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId37";
+	rename -uid "37C7C64D-4A66-1004-9A5A-A095B44139C1";
+	setAttr ".ihi" 0;
+createNode groupParts -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts12";
+	rename -uid "C50C9D9D-467B-6016-A572-52AF8DEC3C0B";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:79]";
+createNode groupId -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId38";
+	rename -uid "EFF6C5A5-4497-2F6B-541B-11BA1A3BAA83";
+	setAttr ".ihi" 0;
+createNode groupId -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId39";
+	rename -uid "B1E03897-417A-20BF-67CC-66B14DAC4CA3";
+	setAttr ".ihi" 0;
+createNode groupParts -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts13";
+	rename -uid "AEE2FF6E-4468-1C81-2235-9B9EF94BD1D1";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:79]";
+createNode groupId -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId40";
+	rename -uid "FAB18F47-429B-C602-3E2B-BC8A91BB7B06";
+	setAttr ".ihi" 0;
+createNode groupId -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId41";
+	rename -uid "3D015EA0-491F-049C-5535-B79BA7F06637";
+	setAttr ".ihi" 0;
+createNode groupParts -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts14";
+	rename -uid "0503F05C-4517-DAB9-6659-AE8617112640";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:79]";
+createNode groupId -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId42";
+	rename -uid "DB9701B3-4EF9-1CB4-3EEA-A7B4BDFFC06A";
+	setAttr ".ihi" 0;
+createNode groupId -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId43";
+	rename -uid "2D2F5D9C-4FA4-811D-A0A0-999A686FA327";
+	setAttr ".ihi" 0;
+createNode groupId -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId44";
+	rename -uid "1A358980-4239-BE4A-BDE7-64B9025BD548";
+	setAttr ".ihi" 0;
+createNode groupId -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId45";
+	rename -uid "54003767-4A62-0C9A-5E37-71A51A091C3E";
+	setAttr ".ihi" 0;
+createNode groupParts -n "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts15";
+	rename -uid "85800CD3-4503-4EC6-39CD-FD919D3F2A0D";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:1273]";
 select -ne :time1;
-	setAttr ".o" 228;
-	setAttr ".unw" 228;
+	setAttr ".o" 36;
+	setAttr ".unw" 36;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -4533,6 +5111,62 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId43.id" "OffTopicReaperKnightRigRN.phl[377]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[378]" "OffTopicReaperKnightRigRN.phl[379]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[380]" "polyUnite1.ip[8]";
+connectAttr "OffTopicReaperKnightRigRN.phl[381]" "polyUnite1.im[8]";
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId44.id" "OffTopicReaperKnightRigRN.phl[382]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[383]" "polyUnite1.ip[9]";
+connectAttr "OffTopicReaperKnightRigRN.phl[384]" "polyUnite1.im[9]";
+connectAttr "OffTopicReaperKnightRigRN.phl[385]" "OffTopicReaperKnightRigRN.phl[386]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[387]" "OffTopicReaperKnightRigRN.phl[388]"
+		;
+connectAttr "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHood|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape.iog.og[0]" "OffTopicReaperKnightRigRN.phl[389]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[390]" "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHood|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape.iog.og[0].gco"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId27.msg" "OffTopicReaperKnightRigRN.phl[391]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId28.msg" "OffTopicReaperKnightRigRN.phl[392]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId29.msg" "OffTopicReaperKnightRigRN.phl[393]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId30.msg" "OffTopicReaperKnightRigRN.phl[394]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId31.msg" "OffTopicReaperKnightRigRN.phl[395]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId32.msg" "OffTopicReaperKnightRigRN.phl[396]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId33.msg" "OffTopicReaperKnightRigRN.phl[397]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId34.msg" "OffTopicReaperKnightRigRN.phl[398]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId35.msg" "OffTopicReaperKnightRigRN.phl[399]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId36.msg" "OffTopicReaperKnightRigRN.phl[400]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId37.msg" "OffTopicReaperKnightRigRN.phl[401]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId38.msg" "OffTopicReaperKnightRigRN.phl[402]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId39.msg" "OffTopicReaperKnightRigRN.phl[403]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId40.msg" "OffTopicReaperKnightRigRN.phl[404]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId41.msg" "OffTopicReaperKnightRigRN.phl[405]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId42.msg" "OffTopicReaperKnightRigRN.phl[406]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId43.msg" "OffTopicReaperKnightRigRN.phl[407]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId44.msg" "OffTopicReaperKnightRigRN.phl[408]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId45.msg" "OffTopicReaperKnightRigRN.phl[409]"
+		;
 connectAttr "CoG_Joint_Ctrl_translateX.o" "OffTopicReaperKnightRigRN.phl[1]";
 connectAttr "CoG_Joint_Ctrl_translateY.o" "OffTopicReaperKnightRigRN.phl[2]";
 connectAttr "CoG_Joint_Ctrl_translateZ.o" "OffTopicReaperKnightRigRN.phl[3]";
@@ -5012,19 +5646,145 @@ connectAttr "Right_Arm_IK_Handle_translateZ.o" "OffTopicReaperKnightRigRN.phl[27
 connectAttr "Right_Arm_IK_Handle_scaleX.o" "OffTopicReaperKnightRigRN.phl[274]";
 connectAttr "Right_Arm_IK_Handle_scaleY.o" "OffTopicReaperKnightRigRN.phl[275]";
 connectAttr "Right_Arm_IK_Handle_scaleZ.o" "OffTopicReaperKnightRigRN.phl[276]";
-connectAttr "ROOT_Jnt_translateX.o" "OffTopicReaperKnightRigRN.phl[277]";
-connectAttr "ROOT_Jnt_translateY.o" "OffTopicReaperKnightRigRN.phl[278]";
-connectAttr "ROOT_Jnt_translateZ.o" "OffTopicReaperKnightRigRN.phl[279]";
-connectAttr "ROOT_Jnt_rotateX.o" "OffTopicReaperKnightRigRN.phl[280]";
-connectAttr "ROOT_Jnt_rotateY.o" "OffTopicReaperKnightRigRN.phl[281]";
-connectAttr "ROOT_Jnt_rotateZ.o" "OffTopicReaperKnightRigRN.phl[282]";
-connectAttr "OffTopicReaperKnightRigRN.phl[283]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+connectAttr "OffTopicReaperKnightRigRN.phl[277]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
 		;
-connectAttr "OffTopicReaperKnightRigRN.phl[284]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts14.og" "OffTopicReaperKnightRigRN.phl[278]"
 		;
-connectAttr "OffTopicReaperKnightRigRN.phl[285]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+connectAttr "OffTopicReaperKnightRigRN.phl[279]" "OffTopicReaperKnightRigRN.phl[280]"
 		;
-connectAttr "OffTopicReaperKnightRigRN.phl[286]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId41.id" "OffTopicReaperKnightRigRN.phl[281]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[282]" "OffTopicReaperKnightRigRN.phl[283]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[284]" "polyUnite1.ip[7]";
+connectAttr "OffTopicReaperKnightRigRN.phl[285]" "polyUnite1.im[7]";
+connectAttr "OffTopicReaperKnightRigRN.phl[286]" "OffTopicReaperKnightRigRN.phl[287]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId42.id" "OffTopicReaperKnightRigRN.phl[288]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts13.og" "OffTopicReaperKnightRigRN.phl[289]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[290]" "OffTopicReaperKnightRigRN.phl[291]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId39.id" "OffTopicReaperKnightRigRN.phl[292]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[293]" "OffTopicReaperKnightRigRN.phl[294]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[295]" "polyUnite1.ip[6]";
+connectAttr "OffTopicReaperKnightRigRN.phl[296]" "polyUnite1.im[6]";
+connectAttr "OffTopicReaperKnightRigRN.phl[297]" "OffTopicReaperKnightRigRN.phl[298]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId40.id" "OffTopicReaperKnightRigRN.phl[299]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts12.og" "OffTopicReaperKnightRigRN.phl[300]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[301]" "OffTopicReaperKnightRigRN.phl[302]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId37.id" "OffTopicReaperKnightRigRN.phl[303]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[304]" "OffTopicReaperKnightRigRN.phl[305]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[306]" "polyUnite1.ip[5]";
+connectAttr "OffTopicReaperKnightRigRN.phl[307]" "polyUnite1.im[5]";
+connectAttr "OffTopicReaperKnightRigRN.phl[308]" "OffTopicReaperKnightRigRN.phl[309]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId38.id" "OffTopicReaperKnightRigRN.phl[310]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts11.og" "OffTopicReaperKnightRigRN.phl[311]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[312]" "OffTopicReaperKnightRigRN.phl[313]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId35.id" "OffTopicReaperKnightRigRN.phl[314]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[315]" "OffTopicReaperKnightRigRN.phl[316]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[317]" "polyUnite1.ip[4]";
+connectAttr "OffTopicReaperKnightRigRN.phl[318]" "polyUnite1.im[4]";
+connectAttr "OffTopicReaperKnightRigRN.phl[319]" "OffTopicReaperKnightRigRN.phl[320]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId36.id" "OffTopicReaperKnightRigRN.phl[321]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts10.og" "OffTopicReaperKnightRigRN.phl[322]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[323]" "OffTopicReaperKnightRigRN.phl[324]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId33.id" "OffTopicReaperKnightRigRN.phl[325]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[326]" "OffTopicReaperKnightRigRN.phl[327]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[328]" "polyUnite1.ip[3]";
+connectAttr "OffTopicReaperKnightRigRN.phl[329]" "polyUnite1.im[3]";
+connectAttr "OffTopicReaperKnightRigRN.phl[330]" "OffTopicReaperKnightRigRN.phl[331]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId34.id" "OffTopicReaperKnightRigRN.phl[332]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts9.og" "OffTopicReaperKnightRigRN.phl[333]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[334]" "OffTopicReaperKnightRigRN.phl[335]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId31.id" "OffTopicReaperKnightRigRN.phl[336]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[337]" "OffTopicReaperKnightRigRN.phl[338]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[339]" "polyUnite1.ip[2]";
+connectAttr "OffTopicReaperKnightRigRN.phl[340]" "polyUnite1.im[2]";
+connectAttr "OffTopicReaperKnightRigRN.phl[341]" "OffTopicReaperKnightRigRN.phl[342]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId32.id" "OffTopicReaperKnightRigRN.phl[343]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts8.og" "OffTopicReaperKnightRigRN.phl[344]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[345]" "OffTopicReaperKnightRigRN.phl[346]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId29.id" "OffTopicReaperKnightRigRN.phl[347]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[348]" "OffTopicReaperKnightRigRN.phl[349]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[350]" "polyUnite1.ip[1]";
+connectAttr "OffTopicReaperKnightRigRN.phl[351]" "polyUnite1.im[1]";
+connectAttr "OffTopicReaperKnightRigRN.phl[352]" "OffTopicReaperKnightRigRN.phl[353]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId30.id" "OffTopicReaperKnightRigRN.phl[354]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts7.og" "OffTopicReaperKnightRigRN.phl[355]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[356]" "OffTopicReaperKnightRigRN.phl[357]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId27.id" "OffTopicReaperKnightRigRN.phl[358]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[359]" "OffTopicReaperKnightRigRN.phl[360]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[361]" "polyUnite1.ip[0]";
+connectAttr "OffTopicReaperKnightRigRN.phl[362]" "polyUnite1.im[0]";
+connectAttr "OffTopicReaperKnightRigRN.phl[363]" "OffTopicReaperKnightRigRN.phl[364]"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId28.id" "OffTopicReaperKnightRigRN.phl[365]"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[366]" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts11.ig"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[367]" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts12.ig"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[368]" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts14.ig"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[369]" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts13.ig"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[370]" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts10.ig"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[371]" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts7.ig"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[372]" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts8.ig"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[373]" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts9.ig"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[374]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[375]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "OffTopicReaperKnightRigRN.phl[376]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts15.og" "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHood|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape.i"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId45.id" "|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHood|OffTopicReaperKnightRig:OffTopicReaperRigFrontier:CloakWHoodShape.iog.og[0].gid"
 		;
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
@@ -5032,5 +5792,27 @@ relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defau
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
+connectAttr "OffTopicReaperKnightRigRNfosterParent1.msg" "OffTopicReaperKnightRigRN.fp"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId27.id" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts7.gi"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId29.id" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts8.gi"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId31.id" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts9.gi"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId33.id" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts10.gi"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId35.id" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts11.gi"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId37.id" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts12.gi"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId39.id" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts13.gi"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId41.id" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts14.gi"
+		;
+connectAttr "polyUnite1.out" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts15.ig"
+		;
+connectAttr "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupId45.id" "OffTopicReaperKnightRig:OffTopicReaperRigFrontier:groupParts15.gi"
+		;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-// End of ReaperKnightAnimMaybeBroken.ma
+// End of ReaperKnightAnimOneMesh.ma
