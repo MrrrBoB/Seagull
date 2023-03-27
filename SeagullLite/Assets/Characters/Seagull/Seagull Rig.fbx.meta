@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: d304c1038d6ae6645a801c6e980a40be
+guid: 55229698c8eac034baa83f1f9e8ae4b1
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SeagullRig_Seagull_Mat
+    second: {fileID: 2100000, guid: 11a433f5f9c26824c9dcc1f1bb86bdd0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -35,7 +40,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 40
+    globalScale: 10
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -88,8 +93,8 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.39999998
-    rootMotionBoneName: 
+    globalScale: 0.099999994
+    rootMotionBoneName: SeagullRig:ROOT_Jnt
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
