@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2155361737222929012}
   - component: {fileID: 8315207613435648878}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: RopeFence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
