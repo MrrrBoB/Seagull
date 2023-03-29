@@ -51,6 +51,7 @@ public class PedestrianTest : MonoBehaviour//, IPointerClickHandler
             navMeshAgent.ResetPath();
             currentRoutine = StartCoroutine(AttackSequence());
             attackStartEvent.Invoke();
+            Debug.Log("Started Attack Event");
         }
         else
         {
@@ -60,12 +61,11 @@ public class PedestrianTest : MonoBehaviour//, IPointerClickHandler
     
     private void OnMouseDown()
     {
-        Debug.Log("clicked");
         if (underAttack)
         {
             gotHitEvent.Invoke();
             currentAttackHits += 1;
-            Debug.Log(currentAttackHits);
+            //Debug.Log(currentAttackHits);
         }
     }
 
@@ -87,6 +87,7 @@ public class PedestrianTest : MonoBehaviour//, IPointerClickHandler
         navMeshAgent.isStopped = false;
         RunAway();
         attackOverEvent.Invoke();
+        Debug.Log("Attack Is Over");
     }
     
     private void EndCurrentRoutine()
