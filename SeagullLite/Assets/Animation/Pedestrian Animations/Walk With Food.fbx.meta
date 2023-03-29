@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2106dcd95d1580747ab6b89fee3505f9
+guid: cba5d08c28ad3644383efc41b9efddec
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -33,9 +33,9 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: mixamo.com
-      takeName: mixamo.com
-      internalID: -203655887218126122
+      name: Walk With Food
+      takeName: Walk With Food
+      internalID: 7046616988236162744
       firstFrame: 0
       lastFrame: 25
       wrapMode: 0
