@@ -8,6 +8,7 @@ public class SeagullBehaviors : MonoBehaviour
 {
   [SerializeField]private Animator sgAnimator;
   [SerializeField] private NavMeshAgent sgNavMeshAgent;
+  public GameObject poopProjectileObj;
 
   private void Awake()
   {
@@ -25,5 +26,10 @@ public class SeagullBehaviors : MonoBehaviour
     if (sgNavMeshAgent.velocity==Vector3.zero)
       sgAnimator.SetBool("Idle", true);
     else sgAnimator.SetBool("Idle", false);
+  }
+
+  public void Poop()
+  {
+    Instantiate(poopProjectileObj, new Vector3(transform.position.x ,transform.position.y+3.5f,transform.position.z), transform.rotation);
   }
 }
