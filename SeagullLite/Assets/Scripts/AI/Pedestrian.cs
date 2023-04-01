@@ -9,11 +9,12 @@ using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class PedestrianTest : MonoBehaviour//, IPointerClickHandler
+public class Pedestrian : MonoBehaviour//, IPointerClickHandler
 {
     public NavMeshAgent navMeshAgent;
-    public float spawnMinY, spawnMaxY, spawnX, targetMinY, targetMaxY,targetX;
-    private GameObject targetObject;
+    [SerializeField] private float targetMinY, targetMaxY,targetX;
+    private GameObject thisTargetObject;
+    private Vector3 targetVector;
     [SerializeField]private Vector3 fleeDestination;
     [SerializeField] private bool underAttack, isVulnerable;
     private Coroutine currentRoutine;
@@ -28,16 +29,15 @@ public class PedestrianTest : MonoBehaviour//, IPointerClickHandler
         isVulnerable = true;
         wfs = new WaitForSeconds(attackDuration);
         navMeshAgent = GetComponent<NavMeshAgent>();
-        transform.position = new Vector3(
-            spawnX,
-            0,
-            Random.Range(spawnMinY, spawnMaxY));
-        targetObject = new GameObject();
-        targetObject.transform.position = new Vector3(
+        if (transform.position.x > 0)
+            targetX *= -1;
+        thisTargetObject = new GameObject();
+        
+        thisTargetObject.transform.position = new Vector3(
             targetX,
             0,
             Random.Range(targetMinY, targetMaxY));
-        navMeshAgent.destination = targetObject.transform.position;
+        navMeshAgent.destination = thisTargetObject.transform.position;
         fleeDestination = new Vector3(25, 0, Random.Range(-10,10));
         fleeDestination.x = (int)Random.Range(0, 2) == 0 ? fleeDestination.x : fleeDestination.x * -1;
     }
@@ -46,6 +46,7 @@ public class PedestrianTest : MonoBehaviour//, IPointerClickHandler
     {
         if (collision.gameObject.CompareTag("Seagull")&&!underAttack&&isVulnerable)
         {
+            collision.gameObject.transform.LookAt(gameObject.transform);
             underAttack = true;
             navMeshAgent.isStopped=true;
             navMeshAgent.ResetPath();

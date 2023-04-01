@@ -39,15 +39,16 @@ public class HitCounter : MonoBehaviour
       gameObject.transform.position = finishPos;
       StartCoroutine(DelayedDisable());
    }
-   public void ResetToZero()
+   public void ResetToZeroAndHide()
    {
       hitCount = 0;
       _flashAnim.SetBool("CanBeHit", true);
+      gameObject.SetActive(false);
    }
 
    private void OnEnable()
    {
-      ResetToZero();
+      //ResetToZeroAndHide();
    }
 
    public void MoveToAction()
@@ -60,7 +61,6 @@ public class HitCounter : MonoBehaviour
    private IEnumerator DelayedDisable()
    {
       yield return new WaitForSeconds(disableDelay);
-      ResetToZero();
-      gameObject.SetActive(false);
+      ResetToZeroAndHide();
    }
 }
