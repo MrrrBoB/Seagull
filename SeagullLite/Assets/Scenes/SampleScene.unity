@@ -2361,7 +2361,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 55229698c8eac034baa83f1f9e8ae4b1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.33
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 55229698c8eac034baa83f1f9e8ae4b1,
         type: 3}
@@ -6542,11 +6542,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1797051591}
   - component: {fileID: 1797051590}
+  - component: {fileID: 1797051595}
   - component: {fileID: 1797051589}
   - component: {fileID: 1797051592}
   - component: {fileID: 1797051594}
   - component: {fileID: 1797051593}
-  - component: {fileID: 1797051595}
   - component: {fileID: 1797051596}
   m_Layer: 0
   m_Name: Seegull
@@ -6638,6 +6638,18 @@ MonoBehaviour:
   respondEvent:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1797051595}
+        m_TargetAssemblyTypeName: SeagullBehaviors, Assembly-CSharp
+        m_MethodName: PerformFlyUp
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1797051595}
         m_TargetAssemblyTypeName: SeagullBehaviors, Assembly-CSharp
         m_MethodName: SetAttackingState
@@ -6738,6 +6750,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1797051595}
+        m_TargetAssemblyTypeName: SeagullBehaviors, Assembly-CSharp
+        m_MethodName: PerformFlyDown
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 445000473}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
@@ -6778,6 +6802,9 @@ MonoBehaviour:
   sgNavMeshAgent: {fileID: 0}
   poopProjectileObj: {fileID: 2167113548924714358, guid: 3097d55522691a544ba9affe7d36f102,
     type: 3}
+  flightHeight: {x: 0, y: 0, z: 0}
+  bottomHeight: {x: 0, y: 3.5, z: 0}
+  visualRig: {fileID: 445000470}
 --- !u!114 &1797051596
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,8 +10,15 @@ public class SeagullBehaviors : MonoBehaviour
   [SerializeField] private NavMeshAgent sgNavMeshAgent;
   public GameObject poopProjectileObj;
 
+  [Header("FlightLerp")] [SerializeField]
+  private Vector3 flightHeight, bottomHeight;
+
+  public GameObject visualRig;
+  
+
   private void Awake()
   {
+    flightHeight = visualRig.transform.localPosition;
     sgAnimator = GetComponentInChildren<Animator>();
     sgNavMeshAgent = GetComponentInChildren<NavMeshAgent>();
   }
@@ -28,11 +35,37 @@ public class SeagullBehaviors : MonoBehaviour
     else sgAnimator.SetBool("Idle", false);
   }
 
-  public IEnumerator FlyDown()
+  private IEnumerator FlyDown(float duration)
   {
-    yield break;
+    float passedTime = 0f;
+    WaitForEndOfFrame wff = new WaitForEndOfFrame();
+    while (passedTime < duration)
+    {
+      passedTime += Time.deltaTime;
+      visualRig.transform.localPosition = Vector3.Lerp(flightHeight, bottomHeight, passedTime/duration);
+      yield return wff;
+    }
+  }
+  private IEnumerator FlyUp(float duration)
+  {
+    float passedTime = 0f;
+    WaitForEndOfFrame wff = new WaitForEndOfFrame();
+    while (passedTime < duration)
+    {
+      passedTime += Time.deltaTime;
+      visualRig.transform.localPosition = Vector3.Lerp(bottomHeight, flightHeight, passedTime / duration);
+      yield return wff;
+    }
   }
 
+  public void PerformFlyUp (float d)
+  {
+    StartCoroutine(FlyUp(d));
+  }
+  public void PerformFlyDown (float d)
+  {
+    StartCoroutine(FlyDown(d));
+  }
   public IEnumerator FlyUp()
   {
     yield break;
