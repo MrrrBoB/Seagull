@@ -66,8 +66,4 @@ public class SeagullBehaviors : MonoBehaviour
   {
     StartCoroutine(FlyDown(d));
   }
-  public IEnumerator FlyUp()
-  {
-    yield break;
-  }
 }

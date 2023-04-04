@@ -21,7 +21,7 @@ public class Pedestrian : MonoBehaviour//, IPointerClickHandler
     private WaitForSeconds wfs;
     public float attackDuration;
     [SerializeField] private int currentAttackHits, totalAttackHits;
-    public UnityEvent attackStartEvent, attackOverEvent, gotHitEvent;
+    public UnityEvent attackStartEvent, attackOverEvent, gotHitEvent, attackSuccessEvent;
 
     private void Start()
     {
@@ -81,7 +81,10 @@ public class Pedestrian : MonoBehaviour//, IPointerClickHandler
     {
         yield return wfs;
         if (currentAttackHits >= totalAttackHits)
+        {
+            attackSuccessEvent.Invoke();
             Debug.Log("You stole the food!");
+        }
         else 
             Debug.Log("They got away!");
         underAttack = false;
