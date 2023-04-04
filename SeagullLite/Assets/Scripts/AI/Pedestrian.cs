@@ -46,6 +46,7 @@ public class Pedestrian : MonoBehaviour//, IPointerClickHandler
     {
         if (collision.gameObject.CompareTag("Seagull")&&!underAttack&&isVulnerable)
         {
+            GameObject.Find("Seegull").transform.LookAt(transform.position);
             collision.gameObject.transform.LookAt(gameObject.transform);
             underAttack = true;
             navMeshAgent.isStopped=true;

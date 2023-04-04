@@ -16,12 +16,16 @@ public class HitCounter : MonoBehaviour
    public float disableDelay;
    [FormerlySerializedAs("_theSeagull")] [SerializeField] private GameObject theSeagull;
    private Vector3 pos;
-   public Vector3 finishPos;
+   public Vector3 finishPos, startPos;
 
    private void Awake()
    {
       _flashAnim = GetComponent<Animator>();
       _textObj = GetComponent<TextMeshProUGUI>();
+   }
+
+   private void Start()
+   {
    }
 
    public void ChangeHitCount(int val)
@@ -41,14 +45,20 @@ public class HitCounter : MonoBehaviour
    }
    public void ResetToZeroAndHide()
    {
-      hitCount = 0;
-      _flashAnim.SetBool("CanBeHit", true);
+      
       gameObject.SetActive(false);
    }
 
+   public void ResetToZero()
+   {
+      hitCount = 0;
+      _flashAnim.SetBool("CanBeHit", true);
+      _textObj.text = ("0");
+      gameObject.transform.position = startPos;
+   }
    private void OnEnable()
    {
-      //ResetToZeroAndHide();
+      ResetToZero();
    }
 
    public void MoveToAction()
