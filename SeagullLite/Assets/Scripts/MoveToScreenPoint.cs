@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(MeshRenderer))]
 public class MoveToScreenPoint : MonoBehaviour
