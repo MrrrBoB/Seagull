@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73c4d53f2cfd71547aa0027906abe1ba, type: 3}
-  m_Name: CurrentFoods
+  m_Script: {fileID: 11500000, guid: c5907c24effe5174c8a8284a5cd58c86, type: 3}
+  m_Name: DataStorage
   m_EditorClassIdentifier: 
-  num: 1
-  newBest: 0
-  changeAction: {fileID: 11400000, guid: 3ac0183d2afb39640b474c6132f1f5f7, type: 2}
+  data: {fileID: 0}
+  listData:
+  - {fileID: 11400000, guid: ff0a39cdf3903264886ca884e6aeb436, type: 2}

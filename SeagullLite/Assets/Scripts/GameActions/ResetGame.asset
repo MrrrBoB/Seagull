@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73c4d53f2cfd71547aa0027906abe1ba, type: 3}
-  m_Name: CurrentFoods
+  m_Script: {fileID: 11500000, guid: d1fce89fc5a545a46ad2be818f1a7b9f, type: 3}
+  m_Name: ResetGame
   m_EditorClassIdentifier: 
-  num: 1
-  newBest: 0
-  changeAction: {fileID: 11400000, guid: 3ac0183d2afb39640b474c6132f1f5f7, type: 2}

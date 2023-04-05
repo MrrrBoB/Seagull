@@ -9,6 +9,8 @@ public class FloatData : ScriptableObject
    public float num;
    [SerializeField] private bool newBest;
 
+   public GameAction changeAction;
+
    public void SetNum(float val)
    {
       num = val;
@@ -31,6 +33,7 @@ public class FloatData : ScriptableObject
    public void ChangeNumByValue(float val)
    {
       num += val;
+      SendChangeCall();
    }
 
    public void CompareValue(float val)
@@ -55,6 +58,7 @@ public class FloatData : ScriptableObject
    {
       SetNum(0);
       newBest = false;
+      SendChangeCall();
    }
 
    public void compareHighScore(FloatData HSData)
@@ -63,5 +67,10 @@ public class FloatData : ScriptableObject
       {
          HSData.SetNum(num);
       }
+   }
+
+   public void SendChangeCall()
+   {
+      changeAction.RaiseAction();
    }
 }
