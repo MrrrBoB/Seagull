@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: 3284991594766663368}
   - component: {fileID: 3284991594766663382}
   - component: {fileID: 3284991594766663381}
+  - component: {fileID: -8789139444451163706}
   m_Layer: 0
   m_Name: Male Pedestrian Beta
   m_TagString: Ped
@@ -374,6 +375,34 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!114 &-8789139444451163706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3284991594766663371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01ad865b83ec0b4793815e272e85671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameActionObj: {fileID: 11400000, guid: 8778464207fe7ad469d6595064212103, type: 2}
+  respondEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3284991594766663370}
+        m_TargetAssemblyTypeName: Pedestrian, Assembly-CSharp
+        m_MethodName: DeletePedestrian
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2133163826290061247
 PrefabInstance:
   m_ObjectHideFlags: 0

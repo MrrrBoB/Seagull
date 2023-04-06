@@ -13,6 +13,7 @@ public class SeagullBehaviors : MonoBehaviour
   [Header("FlightLerp")] [SerializeField]
   private Vector3 flightHeight, bottomHeight;
 
+  public Vector3 startLocation;
   public GameObject visualRig;
   
 
@@ -65,5 +66,10 @@ public class SeagullBehaviors : MonoBehaviour
   public void PerformFlyDown (float d)
   {
     StartCoroutine(FlyDown(d));
+  }
+
+  public void MoveToOriginalPosition()
+  {
+    gameObject.transform.position = startLocation;
   }
 }

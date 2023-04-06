@@ -21,5 +21,13 @@ public class SoundList : MonoBehaviour
       audioPlayer.clip = selectedClip;
       audioPlayer.Play();
    }
-   
+
+   public void RollForPlay(float chanceToPlay)
+   {
+      if (Random.Range(0f, 1f) < chanceToPlay)
+      {
+         PlayRandomClip();
+      }
+   }
+
 }

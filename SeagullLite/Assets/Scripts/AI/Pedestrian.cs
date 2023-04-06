@@ -100,6 +100,12 @@ public class Pedestrian : MonoBehaviour//, IPointerClickHandler
         StopCoroutine(currentRoutine);
     }
 
+    public void DeletePedestrian()
+    {
+        Destroy(gameObject);
+    }
+    
+
     /*public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("clicked");
