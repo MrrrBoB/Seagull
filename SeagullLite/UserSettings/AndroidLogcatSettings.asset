@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R58M219AXSR",
         "name": "com.DefaultCompany.SeagullLite",
-        "processId": 418,
+        "processId": 7490,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -18,6 +18,12 @@
             "deviceId": "R58M219AXSR",
             "name": "com.DefaultCompany.SeagullLite",
             "processId": 418,
+            "exited": false
+        },
+        {
+            "deviceId": "R58M219AXSR",
+            "name": "com.DefaultCompany.SeagullLite",
+            "processId": 7490,
             "exited": false
         }
     ],

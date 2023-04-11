@@ -74,4 +74,11 @@ public class CrowdManager : MonoBehaviour
     {
         return pedestrianList[Random.Range(0, pedestrianList.Length)];
     }
+
+    public void ResetManager()
+    {
+        numCurrentPedestrians = 0;
+        StartSpawning();
+    }
+    
 }

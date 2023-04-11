@@ -237,8 +237,7 @@ MonoBehaviour:
   respondEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3284991594766663370, guid: e474b70362c060e4b9f078357448d84e,
-          type: 3}
+      - m_Target: {fileID: 4062799769740697026}
         m_TargetAssemblyTypeName: Pedestrian, Assembly-CSharp
         m_MethodName: DeletePedestrian
         m_Mode: 1
