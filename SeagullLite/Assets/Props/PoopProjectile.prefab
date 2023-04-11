@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2167113548924714356}
   - component: {fileID: 2167113548924714357}
   - component: {fileID: 2167113548924714312}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PoopProjectile
   m_TagString: Seagull
   m_Icon: {fileID: 0}
